@@ -18,6 +18,14 @@
         background-size: cover;
     }
 
+    .logo-and-wordmark {
+        margin-bottom: 0 !important;
+    }
+
+    .search-inner-wrapper {
+        display: none !important;
+    }
+
     .top-site-outer {
         transition: backdrop-filter .3s, box-shadow .3s;
     }

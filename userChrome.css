@@ -6,7 +6,7 @@
     /* Width of expanded sidebar */
     --expanded-width: 250px;
     /* Custom: Adds a shadow */
-    --box-shadow: 0 0 15px hsla(0, 0%, 7%, 0.738);
+    --box-shadow: 0 0 1.2rem hsla(0, 0%, 7%, 0.9);
 }
 
 /* Custom: Removes green dot from extensions */
@@ -19,7 +19,19 @@
     visibility: collapse !important;
 }
 
+/* MacOS specific styles */
 @media (-moz-platform: macos) {
+    #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+        position: relative;
+        min-width: 48px !important;
+        width: 48px !important;
+        max-width: 48px !important;
+        z-index: 1;
+        margin-top: -1px;
+        transition: min-width var(--transition-time) ease-in-out !important;
+        will-change: min-width;
+    }
+
     :root:not([customizing="true"]) #nav-bar:not([inFullscreen]) {
         padding-left: 80px !important;
     }
@@ -148,8 +160,20 @@
 
 
 }
+
 /* Windows specific styles */
 @media (-moz-platform: windows), (-moz-platform: windows-win10) {
+    #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+        position: relative;
+        min-width: 42px !important;
+        width: 42px !important;
+        max-width: 42px !important;
+        z-index: 1;
+        margin-top: -1px;
+        transition: min-width var(--transition-time) ease-in-out !important;
+        will-change: min-width;
+    }
+
     /* Hide main tabs toolbar */
     :root[tabsintitlebar] {
         --uc-window-control-width: 137px;
@@ -258,19 +282,9 @@
     }
 }
 
+/* Makes sidebar header hideable */
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar-header {
     visibility: collapse;
-}
-
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
-    position: relative;
-    min-width: 42px !important;
-    width: 42px !important;
-    max-width: 42px !important;
-    z-index: 1;
-    margin-top: -1px;
-    transition: min-width var(--transition-time) linear !important;
-    will-change: min-width;
 }
 
 /* positioned=true means sidebar docked to the right */
@@ -285,28 +299,30 @@
     margin-right: 50px;
 }
 
+/* Expand on hover */
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"][positionend="true"]:hover {
     min-width: var(--expanded-width) !important;
     box-shadow: var(--box-shadow);
 }
 
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] > #sidebar {
-    transition: min-width var(--transition-time) linear var(--delay) !important;
+    transition: min-width var(--transition-time) ease-in-out var(--delay) !important;
     will-change: min-width;
 }
 
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover > #sidebar {
     min-width: var(--expanded-width) !important;
-    transition: min-width var(--transition-time) linear var(--delay);
+    transition: min-width var(--transition-time) ease-in-out var(--delay);
     clip-path: inset(0px -15px 0px -15px);
     box-shadow: var(--box-shadow);
 }
 
 #sidebar,
 #sidebar-header {
-    background-color: var(--toolbar-bgcolor) !important;
+    /* background-color: var(--toolbar-bgcolor) !important;
     border-inline: 1px solid var(--chrome-content-separator-color) !important;
-    border-inline-width: 0px 1px !important;
+    border-inline-width: 0px 1px !important; */
+    border: none !important;
 }
 
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([positionend]):hover ~ #appcontent #statuspanel {

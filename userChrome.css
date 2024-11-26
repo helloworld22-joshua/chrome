@@ -10,9 +10,9 @@
     /* Mac Sidebar */
     --mac-sidebar-width: 48px;
     /* Windows Sidebar */
-    --windows-sidebar-width: 44px;
+    --windows-sidebar-width: 42px;
     /* Linux Sidebar */
-    --linux-sidebar-width: 42px;
+    --linux-sidebar-width: 44px;
 }
 
 /* Custom: Removes green dot from extensions */

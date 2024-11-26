@@ -7,6 +7,12 @@
     --expanded-width: 250px;
     /* Custom: Adds a shadow */
     --box-shadow: 0 0 1.2rem hsla(0, 0%, 7%, 0.9);
+    /* Mac Sidebar */
+    --mac-sidebar-width: 48px;
+    /* Windows Sidebar */
+    --windows-sidebar-width: 44px;
+    /* Linux Sidebar */
+    --linux-sidebar-width: 42px;
 }
 
 /* Custom: Removes green dot from extensions */
@@ -19,17 +25,76 @@
     visibility: collapse !important;
 }
 
+/* Basic styling for sidebar */
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+    position: relative;
+    min-width: 48px !important;
+    width: 48px !important;
+    max-width: 48px !important;
+    z-index: 1;
+    margin-top: -1px;
+    transition: min-width var(--transition-time) ease-in-out !important;
+    will-change: min-width;
+}
+
+/* Makes sidebar header hideable */
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar-header {
+    visibility: collapse;
+}
+
+/* positioned=true means sidebar docked to the right */
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"][positionend="true"] {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#browser:has(#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"][positionend="true"]) > #appcontent {
+    margin-right: 50px;
+}
+
+/* Expand on hover */
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"][positionend="true"]:hover {
+    min-width: var(--expanded-width) !important;
+    box-shadow: var(--box-shadow);
+}
+
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] > #sidebar {
+    transition: min-width var(--transition-time) ease-in-out var(--delay) !important;
+    will-change: min-width;
+}
+
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover > #sidebar {
+    min-width: var(--expanded-width) !important;
+    transition: min-width var(--transition-time) ease-in-out var(--delay);
+    clip-path: inset(0px -15px 0px -15px);
+    box-shadow: var(--box-shadow);
+}
+
+#sidebar,
+#sidebar-header {
+    /* background-color: var(--toolbar-bgcolor) !important;
+    border-inline: 1px solid var(--chrome-content-separator-color) !important;
+    border-inline-width: 0px 1px !important; */
+    border: none !important;
+}
+
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([positionend]):hover ~ #appcontent #statuspanel {
+    inset-inline: auto 0px !important;
+}
+
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([positionend]):hover ~ #appcontent #statuspanel-label {
+    margin-inline: 0px !important;
+    border-left-style: solid !important;
+}
+
 /* MacOS specific styles */
 @media (-moz-platform: macos) {
-    #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
-        position: relative;
-        min-width: 48px !important;
-        width: 48px !important;
-        max-width: 48px !important;
-        z-index: 1;
-        margin-top: -1px;
-        transition: min-width var(--transition-time) ease-in-out !important;
-        will-change: min-width;
+    sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+        min-width: var(--mac-sidebar-width) !important;
+        width: var(--mac-sidebar-width) !important;
+        max-width: var(--mac-sidebar-width) !important;
     }
 
     :root:not([customizing="true"]) #nav-bar:not([inFullscreen]) {
@@ -48,14 +113,9 @@
 /* Linux/GTK specific styles */
 @media (-moz-gtk-csd-available), (-moz-platform: linux) {
     #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
-        position: relative;
-        min-width: 42px !important;
-        width: 42px !important;
-        max-width: 42px !important;
-        z-index: 1;
-        margin-top: -1px;
-        transition: min-width var(--transition-time) ease-in-out !important;
-        will-change: min-width;
+        min-width: var(--linux-sidebar-width) !important;
+        width: var(--linux-sidebar-width) !important;
+        max-width: var(--linux-sidebar-width) !important;
     }
 
     .browser-toolbar:not(.titlebar-color) {
@@ -175,14 +235,9 @@
 /* Windows specific styles */
 @media (-moz-platform: windows), (-moz-platform: windows-win10) {
     #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
-        position: relative;
-        min-width: 42px !important;
-        width: 42px !important;
-        max-width: 42px !important;
-        z-index: 1;
-        margin-top: -1px;
-        transition: min-width var(--transition-time) ease-in-out !important;
-        will-change: min-width;
+        min-width: var(--windows-sidebar-width) !important;
+        width: var(--windows-sidebar-width) !important;
+        max-width: var(--windows-sidebar-width) !important;
     }
 
     /* Hide main tabs toolbar */
@@ -291,56 +346,4 @@
     :root[inFullscreen] #nav-bar {
         border-right: none !important;
     }
-}
-
-/* Makes sidebar header hideable */
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar-header {
-    visibility: collapse;
-}
-
-/* positioned=true means sidebar docked to the right */
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"][positionend="true"] {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-}
-
-#browser:has(#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"][positionend="true"]) > #appcontent {
-    margin-right: 50px;
-}
-
-/* Expand on hover */
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"][positionend="true"]:hover {
-    min-width: var(--expanded-width) !important;
-    box-shadow: var(--box-shadow);
-}
-
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] > #sidebar {
-    transition: min-width var(--transition-time) ease-in-out var(--delay) !important;
-    will-change: min-width;
-}
-
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover > #sidebar {
-    min-width: var(--expanded-width) !important;
-    transition: min-width var(--transition-time) ease-in-out var(--delay);
-    clip-path: inset(0px -15px 0px -15px);
-    box-shadow: var(--box-shadow);
-}
-
-#sidebar,
-#sidebar-header {
-    /* background-color: var(--toolbar-bgcolor) !important;
-    border-inline: 1px solid var(--chrome-content-separator-color) !important;
-    border-inline-width: 0px 1px !important; */
-    border: none !important;
-}
-
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([positionend]):hover ~ #appcontent #statuspanel {
-    inset-inline: auto 0px !important;
-}
-
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([positionend]):hover ~ #appcontent #statuspanel-label {
-    margin-inline: 0px !important;
-    border-left-style: solid !important;
 }

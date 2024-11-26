@@ -47,6 +47,17 @@
 
 /* Linux/GTK specific styles */
 @media (-moz-gtk-csd-available), (-moz-platform: linux) {
+    #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+        position: relative;
+        min-width: 42px !important;
+        width: 42px !important;
+        max-width: 42px !important;
+        z-index: 1;
+        margin-top: -1px;
+        transition: min-width var(--transition-time) ease-in-out !important;
+        will-change: min-width;
+    }
+
     .browser-toolbar:not(.titlebar-color) {
         /* Fixes wrong coloring applied with --toolbar-bgcolor by Firefox (#101) */
         background-color: transparent !important;

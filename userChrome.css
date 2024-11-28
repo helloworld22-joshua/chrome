@@ -31,7 +31,7 @@
     min-width: 48px !important;
     width: 48px !important;
     max-width: 48px !important;
-    z-index: 1;
+    z-index: 3;
     margin-top: -1px;
     transition: min-width var(--transition-time) ease-in-out !important;
     will-change: min-width;

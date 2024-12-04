@@ -27,13 +27,15 @@
 	}
 
 	.top-site-outer {
-		transition: backdrop-filter .3s, box-shadow .3s;
+		border-radius: 12px;
+		transition: all ease-in-out .3s, scale ease-in-out .2s;
 	}
 	
 	.top-site-outer:is(.active, :focus, :hover) {
 		background: none !important;
 		backdrop-filter: blur(5px);
 		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+		scale: 1.05;
 	}
 
 	.top-site-outer.active ~ * {
@@ -93,5 +95,37 @@
 
 	.context-menu-button {
 		top: 3px !important;
+		border-radius: 14px !important;
+	}
+
+	.logo-and-wordmark-wrapper .logo {
+		animation-play-state: running;
+	}
+
+	.logo-and-wordmark-wrapper .logo:hover {
+		position: absolute !important;
+		animation: barrelRoll linear 5s;
+	}
+
+	@keyframes screenSafer {
+		0% {
+			top: 0;
+			left: 0;
+		}
+
+		100% {
+			top: calc(100% - 64px);
+			left: calc(100% - 64px);
+		}
+	}
+
+	@keyframes barrelRoll {
+		0% {
+			rotate: 0deg;
+		}
+
+		100% {
+			rotate: 360deg;
+		}
 	}
 }

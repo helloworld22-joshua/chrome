@@ -92,6 +92,11 @@
 	display: none !important
 }
 
+/* Width is overwritten for some reason on the regular sidebar */
+#sidebar-box {
+	width: initial !important;
+}
+
 /* MacOS specific styles */
 @media (-moz-platform: macos) {
 	sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
@@ -267,6 +272,10 @@
 	}
 
 	#reload-button {
+		margin-top: -.5px !important;
+	}
+
+	#home-button {
 		margin-top: -.5px !important;
 	}
 

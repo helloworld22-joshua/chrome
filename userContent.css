@@ -114,6 +114,10 @@
 		border-radius: 14px !important;
 	}
 
+	.logo-and-wordmark-wrapper .logo {
+		border-radius: 43%;
+	}
+
 	.logo-and-wordmark-wrapper .logo:hover {
 		animation: barrelRoll infinite linear 1s;
 	}

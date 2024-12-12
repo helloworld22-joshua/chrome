@@ -84,11 +84,12 @@
 	.icon-wrapper {
 		width: 64px !important;
 		height: 64px !important;
-		transition: scale ease-in-out .3s;
+		transition: all ease-in-out .3s;
 	}
 
 	.top-site-outer:is(.active, :focus, :hover) .icon-wrapper {
-		scale: 1.1;
+		width: 68px !important;
+		height: 68px !important;
 	}
 
 	.top-site-icon {
@@ -149,11 +150,13 @@
 	}
 
 	.logo-and-wordmark-wrapper .logo:hover {
-		animation: barrelRoll infinite linear 1s;
+		animation: barrelRoll infinite linear .5s;
 	}
 
 	.logo-and-wordmark-wrapper .logo:active {
-		animation: barrelRoll infinite linear reverse 1s;
+		position: relative;
+		left: 0;
+		animation: barrelRoll infinite linear .5s, sonic linear 1s forwards;
 	}
 
 	@keyframes barrelRoll {
@@ -162,17 +165,11 @@
 		}
 	}
 
-	/* @keyframes screenSafer {
-		0% {
-			top: 0;
-			left: 0;
+	@keyframes sonic {
+		to {
+			left: 65vw;
 		}
-
-		100% {
-			top: calc(100% - 64px);
-			left: calc(100% - 64px);
-		}
-	} */
+	}
 
 	.discovery-stream article {
 		background-color: hsla(0, 0%, 100%, 0.05) !important;

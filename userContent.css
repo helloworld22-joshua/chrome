@@ -44,6 +44,15 @@
 		margin-bottom: 0 !important;
 	}
 
+	.outer-wrapper {
+		transition: all 3s cubic-bezier(1,0,0,1);
+	}
+
+	.outer-wrapper:active:not(:hover) {
+		filter: invert(1);
+		backdrop-filter: invert(.001);
+	}
+
 	.search-wrapper {
 		background: none !important;
 		border: none !important;
@@ -147,6 +156,7 @@
 
 	.logo-and-wordmark-wrapper .logo {
 		border-radius: 43%;
+		filter: drop-shadow(-.08rem .3rem .2rem #df0d65c0) drop-shadow(.2rem -.3rem .2rem #ffde41c0);
 	}
 
 	.logo-and-wordmark-wrapper .logo:hover {

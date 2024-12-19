@@ -1,4 +1,11 @@
 @-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
+	:root {
+		--blur: blur(7px);
+		--box-shadow: 0 2px 6px hsla(0, 0%, 0%, 0.17),
+					inset 1px 1px 2px hsla(0, 0%, 100%, 0.15),
+					inset 0 0 1px hsla(0, 0%, 100%, 0.1);
+	}
+
 	.click-target-container *, .top-sites-list *, .section-title * {
 		color: #fff !important;
 		text-shadow: 2px 2px 2px #222 !important;
@@ -12,7 +19,7 @@
 		top: 0;
 		left: 0;
 		z-index: -1;
-		background: #000 no-repeat url(img/img3.jpg) center;
+		background: #000 no-repeat url(img/Steam-Day.gif) center;
 		/* test: background: #000 no-repeat url("moz-page-thumb://thumbnails/?url=file%3A%2F%2F%2FC%3A%2FUsers%2Fjoshu%2Downloads%2Fx.png&revision=380") center; */
 		/* background-image: linear-gradient(135deg, hsl(0, 100%, 50%), hsl(240, 100%, 50%)); */
 		background-size: cover;
@@ -45,7 +52,12 @@
 	}
 
 	.outer-wrapper {
-		transition: all 3s cubic-bezier(1,0,0,1);
+		box-shadow: inset 0 0 10rem hsla(0, 0%, 0%, 0.5);
+		transition: all 3s cubic-bezier(1,0,0,1), box-shadow 1s;
+	}
+
+	.outer-wrapper:hover {
+		box-shadow: none;
 	}
 
 	.outer-wrapper:active:not(:hover) {
@@ -69,10 +81,8 @@
 
 	.top-site-outer:is(.active, :focus, :hover) {
 		background-color: hsla(0, 0%, 100%, 0.05) !important;
-		backdrop-filter: blur(7px);
-		box-shadow: 0 2px 6px hsla(0, 0%, 0%, 0.17),
-					inset 1px 1px 2px hsla(0, 0%, 100%, 0.15),
-					inset 0 0 1px hsla(0, 0%, 100%, 0.1);
+		backdrop-filter: var(--blur);
+		box-shadow: var(--box-shadow);
 		scale: 1.05;
 	}
 
@@ -93,6 +103,8 @@
 	.icon-wrapper {
 		width: 64px !important;
 		height: 64px !important;
+		border-radius: 8px;
+		filter: drop-shadow(.2rem .2rem .1rem #0004);
 		transition: all ease-in-out .3s;
 	}
 
@@ -143,7 +155,7 @@
 
 	.context-menu {
 		background: hsla(0, 0%, 100%, 0.05) !important;
-		backdrop-filter: blur(7px);
+		backdrop-filter: var(--blur);
 		box-shadow: 0 2px 6px hsla(0, 0%, 0%, 0.17),
 					inset 1px 1px 2px hsla(0, 0%, 100%, 0.15),
 					inset 0 0 1px hsla(0, 0%, 100%, 0.1) !important;
@@ -157,9 +169,11 @@
 	.logo-and-wordmark-wrapper .logo {
 		border-radius: 43%;
 		filter: drop-shadow(-.08rem .3rem .2rem #df0d65c0) drop-shadow(.2rem -.3rem .2rem #ffde41c0);
+		transition: filter 1s;
 	}
 
 	.logo-and-wordmark-wrapper .logo:hover {
+		filter: drop-shadow(-.08rem .3rem .5rem #625ad9c0) drop-shadow(.2rem -.3rem .5rem #bb3ae6c0);
 		animation: barrelRoll infinite linear .5s;
 	}
 
@@ -167,6 +181,10 @@
 		position: relative;
 		left: 0;
 		animation: barrelRoll infinite linear .5s, sonic linear 1s forwards;
+	}
+
+	.logo-and-wordmark-wrapper .wordmark {
+		filter: drop-shadow(.2rem .2rem .1rem #0004);
 	}
 
 	@keyframes barrelRoll {
@@ -183,15 +201,13 @@
 
 	.discovery-stream article {
 		background-color: hsla(0, 0%, 100%, 0.05) !important;
-		backdrop-filter: blur(7px);
-		box-shadow: 0 2px 6px hsla(0, 0%, 0%, 0.17),
-					inset 1px 1px 2px hsla(0, 0%, 100%, 0.15),
-					inset 0 0 1px hsla(0, 0%, 100%, 0.1);
+		backdrop-filter: var(--blur);
+		box-shadow: var(--box-shadow);
 	}
 
 	.card-outer {
 		background-color: hsla(0, 0%, 100%, 0.05) !important;
-		backdrop-filter: blur(7px);
+		backdrop-filter: var(--blur);
 	}
 
 	.card .card-context {

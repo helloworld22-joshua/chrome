@@ -19,7 +19,7 @@
 		top: 0;
 		left: 0;
 		z-index: -1;
-		background: #000 no-repeat url(img/Steam-Day.gif) center;
+		background: #000 no-repeat url(img/img3.jpg) center;
 		/* test: background: #000 no-repeat url("moz-page-thumb://thumbnails/?url=file%3A%2F%2F%2FC%3A%2FUsers%2Fjoshu%2Downloads%2Fx.png&revision=380") center; */
 		/* background-image: linear-gradient(135deg, hsl(0, 100%, 50%), hsl(240, 100%, 50%)); */
 		background-size: cover;
@@ -52,12 +52,7 @@
 	}
 
 	.outer-wrapper {
-		box-shadow: inset 0 0 10rem hsla(0, 0%, 0%, 0.5);
-		transition: all 3s cubic-bezier(1,0,0,1), box-shadow 1s;
-	}
-
-	.outer-wrapper:hover {
-		box-shadow: none;
+		transition: filter 3s cubic-bezier(1,0,0,1), backdrop-filter 3s cubic-bezier(1,0,0,1);
 	}
 
 	.outer-wrapper:active:not(:hover) {

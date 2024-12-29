@@ -22,9 +22,9 @@
 }
 
 /* ? */
-#TabsToolbar:not([customizing="true"]) {
+/* #TabsToolbar:not([customizing="true"]) {
 	visibility: collapse !important;
-}
+} */
 
 /* Basic styling for sidebar */
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
@@ -236,8 +236,6 @@
 	[inDOMFullscreen="true"] .titlebar-buttonbox-container {
 		transform: translateY(-100px)
 	}
-
-
 }
 
 /* Windows specific styles */
@@ -253,45 +251,6 @@
 		--uc-window-control-width: 137px;
 	}
 
-	#nav-bar {
-		border-inline: var(--uc-window-drag-space-width, 80px) solid var(--toolbar-bgcolor);
-		border-inline-style: solid !important;
-		border-right-width: calc(var(--uc-window-control-width, 0px) + var(--uc-window-drag-space-width, 0px));
-		/* This makes it possible to drag the maximized window. */
-		padding-top: .5px !important;
-		/* Removes the space left when hiding .titlebar-buttonbox-container */
-		margin-left: -80px;
-	}
-
-	#back-button {
-		margin-top: -.5px !important;
-	}
-
-	#forward-button {
-		margin-top: -.5px !important;
-	}
-
-	#reload-button {
-		margin-top: -.5px !important;
-	}
-
-	#home-button {
-		margin-top: -.5px !important;
-	}
-
-	#PanelUI-button {
-		margin-top: -.5px !important;
-	}
-
-	#nav-bar-overflow-button {
-		margin-top: -.5px !important;
-	}
-
-	:root {
-		--uc-toolbar-height: 32px;
-		--chrome-content-separator-color: none !important;
-	}
-
 	:root:not([uidensity="compact"]) {
 		--uc-toolbar-height: 38px;
 	}
@@ -300,16 +259,10 @@
 		visibility: collapse !important;
 	}
 
-	/* Hide the Windows controls on the left side. */
-	#TabsToolbar .titlebar-buttonbox-container {
-		visibility: hidden !important;
+	/* Shows minimize, maximize and close buttons. Hidden by default */
+	#nav-bar .titlebar-buttonbox-container {
+		display: flex !important;
 	}
-
-	/* Line up the Windows controls with the rest of the icons in the toolbar. */
-	:root:not([sizemode="maximized"]) .titlebar-buttonbox-container {
-		margin-top: 3px;
-	}
-
 
 	:root:not([inFullscreen]) #nav-bar {
 		margin-top: calc(0px - var(--uc-toolbar-height));
@@ -320,21 +273,6 @@
 		min-height: unset !important;
 		height: var(--uc-toolbar-height) !important;
 		position: relative;
-	}
-
-	.titlebar-buttonbox {
-		z-index: 3 !important;
-	}
-
-	.titlebar-buttonbox * {
-		width: 35px;
-		height: 38px;
-		pointer-events: auto;
-	}
-
-	#titlebar {
-		z-index: 3;
-		pointer-events: none;
 	}
 
 	#main-menubar {

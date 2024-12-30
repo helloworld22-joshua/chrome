@@ -22,9 +22,9 @@
 }
 
 /* ? */
-/* #TabsToolbar:not([customizing="true"]) {
+#TabsToolbar:not([customizing="true"]) { /* Mac only? */
 	visibility: collapse !important;
-} */
+}
 
 /* Basic styling for sidebar */
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {

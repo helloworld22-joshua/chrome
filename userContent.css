@@ -98,7 +98,7 @@
 	.icon-wrapper {
 		width: 64px !important;
 		height: 64px !important;
-		border-radius: 8px;
+		border-radius: 8px !important;
 		filter: drop-shadow(.2rem .2rem .1rem #0004);
 		transition: all ease-in-out .3s;
 	}

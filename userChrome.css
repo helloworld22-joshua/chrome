@@ -8,11 +8,12 @@
 	/* Custom: Adds a shadow */
 	--box-shadow: 0 0 1.2rem hsla(0, 0%, 7%, 0.9);
 	/* Mac Sidebar */
-	--mac-sidebar-width: 48px;
+	--mac-sidebar-width: 44px;
 	/* Windows Sidebar */
 	--windows-sidebar-width: 42px;
 	/* Linux Sidebar */
 	--linux-sidebar-width: 44px;
+	/* When changing the thickness in Sidebery (e.g. compact) change width by 2px */
 }
 
 /* Removes green dot from extensions button (didn't match my vibe) */
@@ -99,7 +100,7 @@
 
 /* MacOS specific styles */
 @media (-moz-platform: macos) {
-	sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
 		min-width: var(--mac-sidebar-width) !important;
 		width: var(--mac-sidebar-width) !important;
 		max-width: var(--mac-sidebar-width) !important;

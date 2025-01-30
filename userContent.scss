@@ -97,7 +97,7 @@
 			background: none !important;
 			box-shadow: none !important;
 
-			&:active { /* Not working with clicking */
+			&:hover {
 				outline: none !important;
 			}
 		}
@@ -119,11 +119,6 @@
 	}
 
 	@media (-moz-platform: windows), (-moz-platform: windows-win10) {
-		/* @for $i from 1 through 16 {
-			.top-site-outer:nth-child(#{$i}) .top-site-icon {
-				background-image: url(logo/#{$i}.png) !important;
-			}
-		} */
 		.top-site-outer:nth-child(1) .top-site-icon { background-image: url(logo/youtube.png) !important; }
 		.top-site-outer:nth-child(2) .top-site-icon { background-image: url(logo/netflix.png) !important; }
 		.top-site-outer:nth-child(3) .top-site-icon { background-image: url(logo/sflix.png) !important; }

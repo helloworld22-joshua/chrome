@@ -17,6 +17,7 @@
     top: 0;
     left: 0;
     z-index: -1;
+    overflow-x: hidden;
     background: #000 no-repeat url(img/img3.jpg) center;
     /* test: background: #000 no-repeat url("moz-page-thumb://thumbnails/?url=file%3A%2F%2F%2FC%3A%2FUsers%2Fjoshu%2Downloads%2Fx.png&revision=380") center; */
     /* background-image: linear-gradient(135deg, hsl(0, 100%, 50%), hsl(240, 100%, 50%)); */
@@ -38,9 +39,6 @@
   }
   .home-section .divider {
     display: none;
-  }
-  .logo-and-wordmark {
-    margin-bottom: 0 !important;
   }
   .outer-wrapper {
     transition: filter 3s cubic-bezier(1, 0, 0, 1), -webkit-backdrop-filter 3s cubic-bezier(1, 0, 0, 1);
@@ -83,7 +81,7 @@
     background: none !important;
     box-shadow: none !important;
   }
-  .top-site-outer .tile:active { /* Not working with clicking */
+  .top-site-outer .tile:hover {
     outline: none !important;
   }
   .top-site-outer .icon-wrapper {
@@ -103,766 +101,46 @@
     .top-site-outer:nth-child(1) .top-site-icon {
       background-image: url(logo/youtube.png) !important;
     }
-    .top-site-outer:nth-child(1) .top-site-icon {
-      background-image: url(logo/netflix.png) !important;
-    }
-    .top-site-outer:nth-child(1) .top-site-icon {
-      background-image: url(logo/sflix.png) !important;
-    }
-    .top-site-outer:nth-child(1) .top-site-icon {
-      background-image: url(logo/hianime.png) !important;
-    }
-    .top-site-outer:nth-child(1) .top-site-icon {
-      background-image: url(logo/mangafire.png) !important;
-    }
-    .top-site-outer:nth-child(1) .top-site-icon {
-      background-image: url(logo/nexusmods.png) !important;
-    }
-    .top-site-outer:nth-child(1) .top-site-icon {
-      background-image: url(logo/maps.png) !important;
-    }
-    .top-site-outer:nth-child(1) .top-site-icon {
-      background-image: url(logo/icloud.png) !important;
-    }
-    .top-site-outer:nth-child(1) .top-site-icon {
-      background-image: url(logo/github.png) !important;
-    }
-    .top-site-outer:nth-child(1) .top-site-icon {
-      background-image: url(logo/codepen.png) !important;
-    }
-    .top-site-outer:nth-child(1) .top-site-icon {
-      background-image: url(logo/w3schools.png) !important;
-    }
-    .top-site-outer:nth-child(1) .top-site-icon {
-      background-image: url(logo/idealo.png) !important;
-    }
-    .top-site-outer:nth-child(1) .top-site-icon {
-      background-image: url(logo/chatgpt.png) !important;
-    }
-    .top-site-outer:nth-child(1) .top-site-icon {
-      background-image: url(logo/geogebra.png) !important;
-    }
-    .top-site-outer:nth-child(1) .top-site-icon {
-      background-image: url(logo/steamdb.png) !important;
-    }
-    .top-site-outer:nth-child(1) .top-site-icon {
-      background-image: url(logo/firefoxcolor.png) !important;
-    }
     .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/youtube.png) !important;
-    }
-    .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/netflix.png) !important;
-    }
-    .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/sflix.png) !important;
-    }
-    .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/hianime.png) !important;
-    }
-    .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/mangafire.png) !important;
-    }
-    .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/nexusmods.png) !important;
-    }
-    .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/maps.png) !important;
-    }
-    .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/icloud.png) !important;
-    }
-    .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/github.png) !important;
-    }
-    .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/codepen.png) !important;
-    }
-    .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/w3schools.png) !important;
-    }
-    .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/idealo.png) !important;
-    }
-    .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/chatgpt.png) !important;
-    }
-    .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/geogebra.png) !important;
-    }
-    .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/steamdb.png) !important;
-    }
-    .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/firefoxcolor.png) !important;
-    }
-    .top-site-outer:nth-child(3) .top-site-icon {
-      background-image: url(logo/youtube.png) !important;
-    }
-    .top-site-outer:nth-child(3) .top-site-icon {
       background-image: url(logo/netflix.png) !important;
     }
     .top-site-outer:nth-child(3) .top-site-icon {
       background-image: url(logo/sflix.png) !important;
     }
-    .top-site-outer:nth-child(3) .top-site-icon {
-      background-image: url(logo/hianime.png) !important;
-    }
-    .top-site-outer:nth-child(3) .top-site-icon {
-      background-image: url(logo/mangafire.png) !important;
-    }
-    .top-site-outer:nth-child(3) .top-site-icon {
-      background-image: url(logo/nexusmods.png) !important;
-    }
-    .top-site-outer:nth-child(3) .top-site-icon {
-      background-image: url(logo/maps.png) !important;
-    }
-    .top-site-outer:nth-child(3) .top-site-icon {
-      background-image: url(logo/icloud.png) !important;
-    }
-    .top-site-outer:nth-child(3) .top-site-icon {
-      background-image: url(logo/github.png) !important;
-    }
-    .top-site-outer:nth-child(3) .top-site-icon {
-      background-image: url(logo/codepen.png) !important;
-    }
-    .top-site-outer:nth-child(3) .top-site-icon {
-      background-image: url(logo/w3schools.png) !important;
-    }
-    .top-site-outer:nth-child(3) .top-site-icon {
-      background-image: url(logo/idealo.png) !important;
-    }
-    .top-site-outer:nth-child(3) .top-site-icon {
-      background-image: url(logo/chatgpt.png) !important;
-    }
-    .top-site-outer:nth-child(3) .top-site-icon {
-      background-image: url(logo/geogebra.png) !important;
-    }
-    .top-site-outer:nth-child(3) .top-site-icon {
-      background-image: url(logo/steamdb.png) !important;
-    }
-    .top-site-outer:nth-child(3) .top-site-icon {
-      background-image: url(logo/firefoxcolor.png) !important;
-    }
     .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/youtube.png) !important;
-    }
-    .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/netflix.png) !important;
-    }
-    .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/sflix.png) !important;
-    }
-    .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/hianime.png) !important;
-    }
-    .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/mangafire.png) !important;
-    }
-    .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/nexusmods.png) !important;
-    }
-    .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/maps.png) !important;
-    }
-    .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/icloud.png) !important;
-    }
-    .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/github.png) !important;
-    }
-    .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/codepen.png) !important;
-    }
-    .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/w3schools.png) !important;
-    }
-    .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/idealo.png) !important;
-    }
-    .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/chatgpt.png) !important;
-    }
-    .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/geogebra.png) !important;
-    }
-    .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/steamdb.png) !important;
-    }
-    .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/firefoxcolor.png) !important;
-    }
-    .top-site-outer:nth-child(5) .top-site-icon {
-      background-image: url(logo/youtube.png) !important;
-    }
-    .top-site-outer:nth-child(5) .top-site-icon {
-      background-image: url(logo/netflix.png) !important;
-    }
-    .top-site-outer:nth-child(5) .top-site-icon {
-      background-image: url(logo/sflix.png) !important;
-    }
-    .top-site-outer:nth-child(5) .top-site-icon {
       background-image: url(logo/hianime.png) !important;
     }
     .top-site-outer:nth-child(5) .top-site-icon {
       background-image: url(logo/mangafire.png) !important;
     }
-    .top-site-outer:nth-child(5) .top-site-icon {
-      background-image: url(logo/nexusmods.png) !important;
-    }
-    .top-site-outer:nth-child(5) .top-site-icon {
-      background-image: url(logo/maps.png) !important;
-    }
-    .top-site-outer:nth-child(5) .top-site-icon {
-      background-image: url(logo/icloud.png) !important;
-    }
-    .top-site-outer:nth-child(5) .top-site-icon {
-      background-image: url(logo/github.png) !important;
-    }
-    .top-site-outer:nth-child(5) .top-site-icon {
-      background-image: url(logo/codepen.png) !important;
-    }
-    .top-site-outer:nth-child(5) .top-site-icon {
-      background-image: url(logo/w3schools.png) !important;
-    }
-    .top-site-outer:nth-child(5) .top-site-icon {
-      background-image: url(logo/idealo.png) !important;
-    }
-    .top-site-outer:nth-child(5) .top-site-icon {
-      background-image: url(logo/chatgpt.png) !important;
-    }
-    .top-site-outer:nth-child(5) .top-site-icon {
-      background-image: url(logo/geogebra.png) !important;
-    }
-    .top-site-outer:nth-child(5) .top-site-icon {
-      background-image: url(logo/steamdb.png) !important;
-    }
-    .top-site-outer:nth-child(5) .top-site-icon {
-      background-image: url(logo/firefoxcolor.png) !important;
-    }
     .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/youtube.png) !important;
-    }
-    .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/netflix.png) !important;
-    }
-    .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/sflix.png) !important;
-    }
-    .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/hianime.png) !important;
-    }
-    .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/mangafire.png) !important;
-    }
-    .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/nexusmods.png) !important;
-    }
-    .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/maps.png) !important;
-    }
-    .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/icloud.png) !important;
-    }
-    .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/github.png) !important;
-    }
-    .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/codepen.png) !important;
-    }
-    .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/w3schools.png) !important;
-    }
-    .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/idealo.png) !important;
-    }
-    .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/chatgpt.png) !important;
-    }
-    .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/geogebra.png) !important;
-    }
-    .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/steamdb.png) !important;
-    }
-    .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/firefoxcolor.png) !important;
-    }
-    .top-site-outer:nth-child(7) .top-site-icon {
-      background-image: url(logo/youtube.png) !important;
-    }
-    .top-site-outer:nth-child(7) .top-site-icon {
-      background-image: url(logo/netflix.png) !important;
-    }
-    .top-site-outer:nth-child(7) .top-site-icon {
-      background-image: url(logo/sflix.png) !important;
-    }
-    .top-site-outer:nth-child(7) .top-site-icon {
-      background-image: url(logo/hianime.png) !important;
-    }
-    .top-site-outer:nth-child(7) .top-site-icon {
-      background-image: url(logo/mangafire.png) !important;
-    }
-    .top-site-outer:nth-child(7) .top-site-icon {
       background-image: url(logo/nexusmods.png) !important;
     }
     .top-site-outer:nth-child(7) .top-site-icon {
       background-image: url(logo/maps.png) !important;
     }
-    .top-site-outer:nth-child(7) .top-site-icon {
-      background-image: url(logo/icloud.png) !important;
-    }
-    .top-site-outer:nth-child(7) .top-site-icon {
-      background-image: url(logo/github.png) !important;
-    }
-    .top-site-outer:nth-child(7) .top-site-icon {
-      background-image: url(logo/codepen.png) !important;
-    }
-    .top-site-outer:nth-child(7) .top-site-icon {
-      background-image: url(logo/w3schools.png) !important;
-    }
-    .top-site-outer:nth-child(7) .top-site-icon {
-      background-image: url(logo/idealo.png) !important;
-    }
-    .top-site-outer:nth-child(7) .top-site-icon {
-      background-image: url(logo/chatgpt.png) !important;
-    }
-    .top-site-outer:nth-child(7) .top-site-icon {
-      background-image: url(logo/geogebra.png) !important;
-    }
-    .top-site-outer:nth-child(7) .top-site-icon {
-      background-image: url(logo/steamdb.png) !important;
-    }
-    .top-site-outer:nth-child(7) .top-site-icon {
-      background-image: url(logo/firefoxcolor.png) !important;
-    }
     .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/youtube.png) !important;
-    }
-    .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/netflix.png) !important;
-    }
-    .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/sflix.png) !important;
-    }
-    .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/hianime.png) !important;
-    }
-    .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/mangafire.png) !important;
-    }
-    .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/nexusmods.png) !important;
-    }
-    .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/maps.png) !important;
-    }
-    .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/icloud.png) !important;
-    }
-    .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/github.png) !important;
-    }
-    .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/codepen.png) !important;
-    }
-    .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/w3schools.png) !important;
-    }
-    .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/idealo.png) !important;
-    }
-    .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/chatgpt.png) !important;
-    }
-    .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/geogebra.png) !important;
-    }
-    .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/steamdb.png) !important;
-    }
-    .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/firefoxcolor.png) !important;
-    }
-    .top-site-outer:nth-child(9) .top-site-icon {
-      background-image: url(logo/youtube.png) !important;
-    }
-    .top-site-outer:nth-child(9) .top-site-icon {
-      background-image: url(logo/netflix.png) !important;
-    }
-    .top-site-outer:nth-child(9) .top-site-icon {
-      background-image: url(logo/sflix.png) !important;
-    }
-    .top-site-outer:nth-child(9) .top-site-icon {
-      background-image: url(logo/hianime.png) !important;
-    }
-    .top-site-outer:nth-child(9) .top-site-icon {
-      background-image: url(logo/mangafire.png) !important;
-    }
-    .top-site-outer:nth-child(9) .top-site-icon {
-      background-image: url(logo/nexusmods.png) !important;
-    }
-    .top-site-outer:nth-child(9) .top-site-icon {
-      background-image: url(logo/maps.png) !important;
-    }
-    .top-site-outer:nth-child(9) .top-site-icon {
       background-image: url(logo/icloud.png) !important;
     }
     .top-site-outer:nth-child(9) .top-site-icon {
       background-image: url(logo/github.png) !important;
     }
-    .top-site-outer:nth-child(9) .top-site-icon {
-      background-image: url(logo/codepen.png) !important;
-    }
-    .top-site-outer:nth-child(9) .top-site-icon {
-      background-image: url(logo/w3schools.png) !important;
-    }
-    .top-site-outer:nth-child(9) .top-site-icon {
-      background-image: url(logo/idealo.png) !important;
-    }
-    .top-site-outer:nth-child(9) .top-site-icon {
-      background-image: url(logo/chatgpt.png) !important;
-    }
-    .top-site-outer:nth-child(9) .top-site-icon {
-      background-image: url(logo/geogebra.png) !important;
-    }
-    .top-site-outer:nth-child(9) .top-site-icon {
-      background-image: url(logo/steamdb.png) !important;
-    }
-    .top-site-outer:nth-child(9) .top-site-icon {
-      background-image: url(logo/firefoxcolor.png) !important;
-    }
     .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/youtube.png) !important;
-    }
-    .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/netflix.png) !important;
-    }
-    .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/sflix.png) !important;
-    }
-    .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/hianime.png) !important;
-    }
-    .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/mangafire.png) !important;
-    }
-    .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/nexusmods.png) !important;
-    }
-    .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/maps.png) !important;
-    }
-    .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/icloud.png) !important;
-    }
-    .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/github.png) !important;
-    }
-    .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/codepen.png) !important;
-    }
-    .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/w3schools.png) !important;
-    }
-    .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/idealo.png) !important;
-    }
-    .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/chatgpt.png) !important;
-    }
-    .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/geogebra.png) !important;
-    }
-    .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/steamdb.png) !important;
-    }
-    .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/firefoxcolor.png) !important;
-    }
-    .top-site-outer:nth-child(11) .top-site-icon {
-      background-image: url(logo/youtube.png) !important;
-    }
-    .top-site-outer:nth-child(11) .top-site-icon {
-      background-image: url(logo/netflix.png) !important;
-    }
-    .top-site-outer:nth-child(11) .top-site-icon {
-      background-image: url(logo/sflix.png) !important;
-    }
-    .top-site-outer:nth-child(11) .top-site-icon {
-      background-image: url(logo/hianime.png) !important;
-    }
-    .top-site-outer:nth-child(11) .top-site-icon {
-      background-image: url(logo/mangafire.png) !important;
-    }
-    .top-site-outer:nth-child(11) .top-site-icon {
-      background-image: url(logo/nexusmods.png) !important;
-    }
-    .top-site-outer:nth-child(11) .top-site-icon {
-      background-image: url(logo/maps.png) !important;
-    }
-    .top-site-outer:nth-child(11) .top-site-icon {
-      background-image: url(logo/icloud.png) !important;
-    }
-    .top-site-outer:nth-child(11) .top-site-icon {
-      background-image: url(logo/github.png) !important;
-    }
-    .top-site-outer:nth-child(11) .top-site-icon {
       background-image: url(logo/codepen.png) !important;
     }
     .top-site-outer:nth-child(11) .top-site-icon {
       background-image: url(logo/w3schools.png) !important;
     }
-    .top-site-outer:nth-child(11) .top-site-icon {
-      background-image: url(logo/idealo.png) !important;
-    }
-    .top-site-outer:nth-child(11) .top-site-icon {
-      background-image: url(logo/chatgpt.png) !important;
-    }
-    .top-site-outer:nth-child(11) .top-site-icon {
-      background-image: url(logo/geogebra.png) !important;
-    }
-    .top-site-outer:nth-child(11) .top-site-icon {
-      background-image: url(logo/steamdb.png) !important;
-    }
-    .top-site-outer:nth-child(11) .top-site-icon {
-      background-image: url(logo/firefoxcolor.png) !important;
-    }
     .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/youtube.png) !important;
-    }
-    .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/netflix.png) !important;
-    }
-    .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/sflix.png) !important;
-    }
-    .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/hianime.png) !important;
-    }
-    .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/mangafire.png) !important;
-    }
-    .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/nexusmods.png) !important;
-    }
-    .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/maps.png) !important;
-    }
-    .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/icloud.png) !important;
-    }
-    .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/github.png) !important;
-    }
-    .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/codepen.png) !important;
-    }
-    .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/w3schools.png) !important;
-    }
-    .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/idealo.png) !important;
-    }
-    .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/chatgpt.png) !important;
-    }
-    .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/geogebra.png) !important;
-    }
-    .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/steamdb.png) !important;
-    }
-    .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/firefoxcolor.png) !important;
-    }
-    .top-site-outer:nth-child(13) .top-site-icon {
-      background-image: url(logo/youtube.png) !important;
-    }
-    .top-site-outer:nth-child(13) .top-site-icon {
-      background-image: url(logo/netflix.png) !important;
-    }
-    .top-site-outer:nth-child(13) .top-site-icon {
-      background-image: url(logo/sflix.png) !important;
-    }
-    .top-site-outer:nth-child(13) .top-site-icon {
-      background-image: url(logo/hianime.png) !important;
-    }
-    .top-site-outer:nth-child(13) .top-site-icon {
-      background-image: url(logo/mangafire.png) !important;
-    }
-    .top-site-outer:nth-child(13) .top-site-icon {
-      background-image: url(logo/nexusmods.png) !important;
-    }
-    .top-site-outer:nth-child(13) .top-site-icon {
-      background-image: url(logo/maps.png) !important;
-    }
-    .top-site-outer:nth-child(13) .top-site-icon {
-      background-image: url(logo/icloud.png) !important;
-    }
-    .top-site-outer:nth-child(13) .top-site-icon {
-      background-image: url(logo/github.png) !important;
-    }
-    .top-site-outer:nth-child(13) .top-site-icon {
-      background-image: url(logo/codepen.png) !important;
-    }
-    .top-site-outer:nth-child(13) .top-site-icon {
-      background-image: url(logo/w3schools.png) !important;
-    }
-    .top-site-outer:nth-child(13) .top-site-icon {
       background-image: url(logo/idealo.png) !important;
     }
     .top-site-outer:nth-child(13) .top-site-icon {
       background-image: url(logo/chatgpt.png) !important;
     }
-    .top-site-outer:nth-child(13) .top-site-icon {
-      background-image: url(logo/geogebra.png) !important;
-    }
-    .top-site-outer:nth-child(13) .top-site-icon {
-      background-image: url(logo/steamdb.png) !important;
-    }
-    .top-site-outer:nth-child(13) .top-site-icon {
-      background-image: url(logo/firefoxcolor.png) !important;
-    }
-    .top-site-outer:nth-child(14) .top-site-icon {
-      background-image: url(logo/youtube.png) !important;
-    }
-    .top-site-outer:nth-child(14) .top-site-icon {
-      background-image: url(logo/netflix.png) !important;
-    }
-    .top-site-outer:nth-child(14) .top-site-icon {
-      background-image: url(logo/sflix.png) !important;
-    }
-    .top-site-outer:nth-child(14) .top-site-icon {
-      background-image: url(logo/hianime.png) !important;
-    }
-    .top-site-outer:nth-child(14) .top-site-icon {
-      background-image: url(logo/mangafire.png) !important;
-    }
-    .top-site-outer:nth-child(14) .top-site-icon {
-      background-image: url(logo/nexusmods.png) !important;
-    }
-    .top-site-outer:nth-child(14) .top-site-icon {
-      background-image: url(logo/maps.png) !important;
-    }
-    .top-site-outer:nth-child(14) .top-site-icon {
-      background-image: url(logo/icloud.png) !important;
-    }
-    .top-site-outer:nth-child(14) .top-site-icon {
-      background-image: url(logo/github.png) !important;
-    }
-    .top-site-outer:nth-child(14) .top-site-icon {
-      background-image: url(logo/codepen.png) !important;
-    }
-    .top-site-outer:nth-child(14) .top-site-icon {
-      background-image: url(logo/w3schools.png) !important;
-    }
-    .top-site-outer:nth-child(14) .top-site-icon {
-      background-image: url(logo/idealo.png) !important;
-    }
-    .top-site-outer:nth-child(14) .top-site-icon {
-      background-image: url(logo/chatgpt.png) !important;
-    }
     .top-site-outer:nth-child(14) .top-site-icon {
       background-image: url(logo/geogebra.png) !important;
     }
-    .top-site-outer:nth-child(14) .top-site-icon {
-      background-image: url(logo/steamdb.png) !important;
-    }
-    .top-site-outer:nth-child(14) .top-site-icon {
-      background-image: url(logo/firefoxcolor.png) !important;
-    }
     .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/youtube.png) !important;
-    }
-    .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/netflix.png) !important;
-    }
-    .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/sflix.png) !important;
-    }
-    .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/hianime.png) !important;
-    }
-    .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/mangafire.png) !important;
-    }
-    .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/nexusmods.png) !important;
-    }
-    .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/maps.png) !important;
-    }
-    .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/icloud.png) !important;
-    }
-    .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/github.png) !important;
-    }
-    .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/codepen.png) !important;
-    }
-    .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/w3schools.png) !important;
-    }
-    .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/idealo.png) !important;
-    }
-    .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/chatgpt.png) !important;
-    }
-    .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/geogebra.png) !important;
-    }
-    .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/steamdb.png) !important;
-    }
-    .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/firefoxcolor.png) !important;
-    }
-    .top-site-outer:nth-child(16) .top-site-icon {
-      background-image: url(logo/youtube.png) !important;
-    }
-    .top-site-outer:nth-child(16) .top-site-icon {
-      background-image: url(logo/netflix.png) !important;
-    }
-    .top-site-outer:nth-child(16) .top-site-icon {
-      background-image: url(logo/sflix.png) !important;
-    }
-    .top-site-outer:nth-child(16) .top-site-icon {
-      background-image: url(logo/hianime.png) !important;
-    }
-    .top-site-outer:nth-child(16) .top-site-icon {
-      background-image: url(logo/mangafire.png) !important;
-    }
-    .top-site-outer:nth-child(16) .top-site-icon {
-      background-image: url(logo/nexusmods.png) !important;
-    }
-    .top-site-outer:nth-child(16) .top-site-icon {
-      background-image: url(logo/maps.png) !important;
-    }
-    .top-site-outer:nth-child(16) .top-site-icon {
-      background-image: url(logo/icloud.png) !important;
-    }
-    .top-site-outer:nth-child(16) .top-site-icon {
-      background-image: url(logo/github.png) !important;
-    }
-    .top-site-outer:nth-child(16) .top-site-icon {
-      background-image: url(logo/codepen.png) !important;
-    }
-    .top-site-outer:nth-child(16) .top-site-icon {
-      background-image: url(logo/w3schools.png) !important;
-    }
-    .top-site-outer:nth-child(16) .top-site-icon {
-      background-image: url(logo/idealo.png) !important;
-    }
-    .top-site-outer:nth-child(16) .top-site-icon {
-      background-image: url(logo/chatgpt.png) !important;
-    }
-    .top-site-outer:nth-child(16) .top-site-icon {
-      background-image: url(logo/geogebra.png) !important;
-    }
-    .top-site-outer:nth-child(16) .top-site-icon {
       background-image: url(logo/steamdb.png) !important;
     }
     .top-site-outer:nth-child(16) .top-site-icon {
@@ -878,7 +156,7 @@
   .title:not(.pinned) span {
     font-style: italic;
   }
-  .icon-pin-small {
+  .title .icon-pin-small {
     display: none !important;
   }
   .context-menu {
@@ -889,6 +167,9 @@
   .context-menu-button {
     top: 3px !important;
     border-radius: 14px !important;
+  }
+  .logo-and-wordmark {
+    margin-bottom: 0 !important;
   }
   .logo-and-wordmark-wrapper .logo {
     border-radius: 43%;
@@ -907,16 +188,6 @@
   .logo-and-wordmark-wrapper .wordmark {
     filter: drop-shadow(0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.2666666667));
   }
-  @keyframes barrelRoll {
-    to {
-      rotate: 1turn;
-    }
-  }
-  @keyframes sonic {
-    to {
-      left: 65vw;
-    }
-  }
   .discovery-stream article {
     background-color: hsla(0, 0%, 100%, 0.05) !important;
     backdrop-filter: var(--blur);
@@ -928,5 +199,15 @@
   }
   .card .card-context {
     background: none !important;
+  }
+  @keyframes barrelRoll {
+    to {
+      rotate: 1turn;
+    }
+  }
+  @keyframes sonic {
+    to {
+      left: 65vw;
+    }
   }
 }/*# sourceMappingURL=userContent.css.map */

@@ -72,7 +72,7 @@
 		border-radius: 12px;
 		transition: all ease-in-out .3s, scale ease-in-out .2s;
 
-		&:is(.active, :focus, :hover) { /* Focus not working? */
+		&:is(.active, :focus-within, :hover) {
 			background-color: hsla(0, 0%, 100%, 0.05) !important;
 			backdrop-filter: var(--blur);
 			box-shadow: var(--box-shadow);
@@ -96,10 +96,7 @@
 		.tile {
 			background: none !important;
 			box-shadow: none !important;
-
-			&:hover {
-				outline: none !important;
-			}
+			outline: none !important;
 		}
 
 		.icon-wrapper {

@@ -60,13 +60,13 @@
     border-radius: 12px;
     transition: all ease-in-out 0.3s, scale ease-in-out 0.2s;
   }
-  .top-site-outer:is(.active, :focus, :hover) { /* Focus not working? */
+  .top-site-outer:is(.active, :focus-within, :hover) {
     background-color: hsla(0, 0%, 100%, 0.05) !important;
     backdrop-filter: var(--blur);
     box-shadow: var(--box-shadow);
     scale: 1.05;
   }
-  .top-site-outer:is(.active, :focus, :hover) .icon-wrapper {
+  .top-site-outer:is(.active, :focus-within, :hover) .icon-wrapper {
     width: 72px !important;
     height: 72px !important;
   }
@@ -80,8 +80,6 @@
   .top-site-outer .tile {
     background: none !important;
     box-shadow: none !important;
-  }
-  .top-site-outer .tile:hover {
     outline: none !important;
   }
   .top-site-outer .icon-wrapper {

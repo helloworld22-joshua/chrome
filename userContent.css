@@ -150,6 +150,8 @@
     font-size: 1.1rem;
     -moz-user-select: none;
          user-select: none;
+    word-break: break-word !important;
+    /* Alternatively with hyphens: auto */
   }
   .title:not(.pinned) span {
     font-style: italic;

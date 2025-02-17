@@ -139,6 +139,8 @@
 			/* font-family: "Dosis", sans-serif; */
 			font-size: 1.1rem;
 			user-select: none;
+			word-break: break-word !important;
+			/* Alternatively with hyphens: auto */
 		}
 
 		&:not(.pinned) span {

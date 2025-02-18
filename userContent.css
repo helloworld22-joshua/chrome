@@ -148,10 +148,21 @@
   .title span {
     /* font-family: "Dosis", sans-serif; */
     font-size: 1.1rem;
+    max-height: 22px;
     -moz-user-select: none;
          user-select: none;
     word-break: break-word !important;
-    /* Alternatively with hyphens: auto */
+    text-wrap: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    transition: max-height ease-in-out 0.3s; /* Fix return trans. not working */
+  }
+  .title span:hover {
+    max-height: 100px;
+    contain: none !important;
+    text-wrap: wrap !important;
+    overflow: unset !important;
+    white-space: nowrap;
   }
   .title:not(.pinned) span {
     font-style: italic;

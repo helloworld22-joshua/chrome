@@ -8,7 +8,7 @@
 /* My FF on For MacOS */
 #root.root {--toolbar-bg: #010e19;}
 #root.root {--frame-bg: #010e19;}
-#root.root {--audio-left: 24px;}
+#root.root {--audio-left: 22px;}
 
 #root.root {
 	--tabs-font: 10pt sans-serif;   /* MacOS doesn't have Segoe UI */

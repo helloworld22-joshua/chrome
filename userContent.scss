@@ -1,7 +1,7 @@
 @-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
 	:root {
 		--blur: blur(7px);
-		--box-shadow: 0 2px 6px hsla(0, 0%, 0%, 0.17),
+		--box-shadow: 0 2px 6px hsla(0, 0%, 0%, 0.1),
 			inset 1px 1px 2px hsla(0, 0%, 100%, 0.15),
 			inset 0 0 1px hsla(0, 0%, 100%, 0.1);
 	}
@@ -12,8 +12,8 @@
 	}
 
 	body::before {
-		position: fixed;
 		content: "";
+		position: fixed;
 		width: 100vw;
 		height: 100vh;
 		top: 0;
@@ -21,8 +21,6 @@
 		z-index: -1;
 		overflow-x: hidden;
 		background: #000 no-repeat url(img/Frieren.jpg) center;
-		/* test: background: #000 no-repeat url("moz-page-thumb://thumbnails/?url=file%3A%2F%2F%2FC%3A%2FUsers%2Fjoshu%2Downloads%2Fx.png&revision=380") center; */
-		/* background-image: linear-gradient(135deg, hsl(0, 100%, 50%), hsl(240, 100%, 50%)); */
 		background-size: cover;
 	}
 

@@ -1,20 +1,23 @@
+#root.root {--frame-bg: #00000000;}
 #root.root {--tabs-border-radius: 6px;}
 
-/* My FF on Windows */
-/* #root.root {--toolbar-bg: #0a011e;}
-#root.root {--frame-bg: #0a011e;}
-#root.root {--audio-left: 24px;} */
-
-/* My FF on For MacOS */
-#root.root {--toolbar-bg: #010e19;}
-#root.root {--frame-bg: #010e19;}
+/* #root.root {--audio-left: 24px;} */
 #root.root {--audio-left: 22px;}
 
+body {
+	background-image: linear-gradient(180deg, rgba(28,87,145,1) 0%, rgba(75,123,171,1) 40%, rgba(233,229,228,1) 60%, rgba(128,160,198,1) 80%, rgba(244,114,122,1) 90%, rgba(44,70,93,1) 98%);
+}
+
+.Tab > * {
+background-color: transparent !important;
+}
+
+.audio {
+background-color: transparent !important;
+}
+
 #root.root {
-	--tabs-font: 10pt sans-serif;   /* MacOS doesn't have Segoe UI */
-	/* --tabs-count-font: .625rem Segoe UI;
-	--bookmarks-bookmark-font: .875rem Segoe UI;
-	--bookmarks-folder-font: 9pt Segoe UI; */
+	--tabs-font: 10pt sans-serif;
 	--nav-btn-width: 42px;
 	--nav-btn-height: 42px;
 	--tabs-height: 40px;

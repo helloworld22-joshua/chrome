@@ -1,13 +1,29 @@
+@font-face {
+  font-family: "Collegiate";
+  src: url("fonts/collegiate-font/Collegiate-wM1w.ttf") format("woff2"), url("fonts/collegiate-font/Collegiate-wM1w.ttf") format("woff"), url("fonts/collegiate-font/Collegiate-wM1w.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Goldleaf";
+  src: url("fonts/goldleaf-bold-font/GoldleafBoldPersonalUseBold-eZ4dO.ttf") format("woff2"), url("fonts/goldleaf-bold-font/GoldleafBoldPersonalUseBold-eZ4dO.ttf") format("woff"), url("fonts/goldleaf-bold-font/GoldleafBoldPersonalUseBold-eZ4dO.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Requiner";
+  src: url("fonts/requiner-font/Requiner-6RRLM.otf") format("woff2"), url("fonts/requiner-font/Requiner-6RRLM.otf") format("woff"), url("fonts/requiner-font/Requiner-6RRLM.otf") format("truetype");
+}
 @-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
   :root {
     --blur: blur(7px);
     --box-shadow: 0 2px 6px hsla(0, 0%, 0%, 0.1),
     	inset 1px 1px 2px hsla(0, 0%, 100%, 0.15),
     	inset 0 0 1px hsla(0, 0%, 100%, 0.1);
+    --text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.3);
+    --drop-shadow: drop-shadow(.2rem .2rem .1rem #0004);
+    --title-font: "Collegiate", sans-serif;
+    --title-size: 1.2rem;
   }
   .click-target-container *, .top-sites-list *, .section-title * {
     color: #fff !important;
-    text-shadow: 2px 2px 2px #222 !important;
+    text-shadow: var(--text-shadow) !important;
   }
   body::before {
     content: "";
@@ -18,12 +34,12 @@
     left: 0;
     z-index: -1;
     overflow-x: hidden;
-    background: #000 no-repeat url(img/Frieren.jpg) center;
+    background: #000 no-repeat url(wallpapers/Himalajya.jpg) center;
     background-size: cover;
   }
   .personalize-button:hover, .customize-menu {
     background-color: hsla(0, 0%, 100%, 0.2) !important;
-    backdrop-filter: blur(15px);
+    backdrop-filter: var(--blur);
   }
   .customize-menu .close-button-wrapper {
     background: none !important;
@@ -84,7 +100,7 @@
     width: 64px !important;
     height: 64px !important;
     border-radius: 8px !important;
-    filter: drop-shadow(0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.2666666667));
+    filter: var(--drop-shadow);
     transition: all ease-in-out 0.3s;
   }
   .top-site-outer .top-site-icon {
@@ -95,57 +111,57 @@
   }
   @media (-moz-platform: windows), (-moz-platform: windows-win10) {
     .top-site-outer:nth-child(1) .top-site-icon {
-      background-image: url(logo/youtube.png) !important;
+      background-image: url(logos/youtube.png) !important;
     }
     .top-site-outer:nth-child(2) .top-site-icon {
-      background-image: url(logo/netflix.png) !important;
+      background-image: url(logos/netflix.png) !important;
     }
     .top-site-outer:nth-child(3) .top-site-icon {
-      background-image: url(logo/sflix.png) !important;
+      background-image: url(logos/sflix.png) !important;
     }
     .top-site-outer:nth-child(4) .top-site-icon {
-      background-image: url(logo/hianime.png) !important;
+      background-image: url(logos/hianime.png) !important;
     }
     .top-site-outer:nth-child(5) .top-site-icon {
-      background-image: url(logo/mangafire.png) !important;
+      background-image: url(logos/mangafire.png) !important;
     }
     .top-site-outer:nth-child(6) .top-site-icon {
-      background-image: url(logo/nexusmods.png) !important;
+      background-image: url(logos/nexusmods.png) !important;
     }
     .top-site-outer:nth-child(7) .top-site-icon {
-      background-image: url(logo/maps.png) !important;
+      background-image: url(logos/maps.png) !important;
     }
     .top-site-outer:nth-child(8) .top-site-icon {
-      background-image: url(logo/icloud.png) !important;
+      background-image: url(logos/icloud.png) !important;
     }
     .top-site-outer:nth-child(9) .top-site-icon {
-      background-image: url(logo/github.png) !important;
+      background-image: url(logos/github.png) !important;
     }
     .top-site-outer:nth-child(10) .top-site-icon {
-      background-image: url(logo/codepen.png) !important;
+      background-image: url(logos/codepen.png) !important;
     }
     .top-site-outer:nth-child(11) .top-site-icon {
-      background-image: url(logo/w3schools.png) !important;
+      background-image: url(logos/w3schools.png) !important;
     }
     .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logo/idealo.png) !important;
+      background-image: url(logos/idealo.png) !important;
     }
     .top-site-outer:nth-child(13) .top-site-icon {
-      background-image: url(logo/chatgpt.png) !important;
+      background-image: url(logos/chatgpt.png) !important;
     }
     .top-site-outer:nth-child(14) .top-site-icon {
-      background-image: url(logo/geogebra.png) !important;
+      background-image: url(logos/geogebra.png) !important;
     }
     .top-site-outer:nth-child(15) .top-site-icon {
-      background-image: url(logo/steamdb.png) !important;
+      background-image: url(logos/steamdb.png) !important;
     }
     .top-site-outer:nth-child(16) .top-site-icon {
-      background-image: url(logo/firefoxcolor.png) !important;
+      background-image: url(logos/firefoxcolor.png) !important;
     }
   }
   .title span {
-    /* font-family: "Dosis", sans-serif; */
-    font-size: 1.1rem;
+    font-family: var(--title-font);
+    font-size: var(--title-size);
     max-height: 22px;
     -moz-user-select: none;
          user-select: none;
@@ -153,7 +169,9 @@
     text-wrap: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
-    transition: max-height ease-in-out 0.3s; /* Fix return trans. not working */
+    transition: max-height ease-in-out 0.3s;
+    line-clamp: none !important;
+    -webkit-line-clamp: none !important;
   }
   .title span:hover {
     max-height: 100px;
@@ -171,7 +189,7 @@
   .context-menu {
     background: hsla(0, 0%, 100%, 0.05) !important;
     backdrop-filter: var(--blur);
-    box-shadow: 0 2px 6px hsla(0, 0%, 0%, 0.17), inset 1px 1px 2px hsla(0, 0%, 100%, 0.15), inset 0 0 1px hsla(0, 0%, 100%, 0.1) !important;
+    box-shadow: var(--box-shadow) !important;
   }
   .context-menu-button {
     top: 3px !important;
@@ -209,14 +227,14 @@
   .card .card-context {
     background: none !important;
   }
-  @keyframes barrelRoll {
-    to {
-      rotate: 1turn;
-    }
+}
+@keyframes barrelRoll {
+  to {
+    rotate: 1turn;
   }
-  @keyframes sonic {
-    to {
-      left: 65vw;
-    }
+}
+@keyframes sonic {
+  to {
+    left: 65vw;
   }
 }/*# sourceMappingURL=userContent.css.map */

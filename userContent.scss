@@ -1,4 +1,18 @@
 @font-face {
+	font-family: "Archimoto";
+	src: url("fonts/archimoto-font/Demoarchimotov01Black-8MD5g.otf") format("woff2"),
+		 url("fonts/archimoto-font/Demoarchimotov01Black-8MD5g.otf") format("woff"),
+		 url("fonts/archimoto-font/Demoarchimotov01Black-8MD5g.otf") format("truetype");
+}
+
+@font-face {
+	font-family: "BrassMono";
+	src: url("fonts/brass-mono-font/BrassMonoBold-w16rP.ttf") format("woff2"),
+		 url("fonts/brass-mono-font/BrassMonoBold-w16rP.ttf") format("woff"),
+		 url("fonts/brass-mono-font/BrassMonoBold-w16rP.ttf") format("truetype");
+}
+
+@font-face {
 	font-family: "Collegiate";
 	src: url("fonts/collegiate-font/Collegiate-wM1w.ttf") format("woff2"),
 		 url("fonts/collegiate-font/Collegiate-wM1w.ttf") format("woff"),
@@ -21,14 +35,15 @@
 
 @-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
 	:root {
+		--wallpaper: url(wallpapers/OuterWilds.jpg);
 		--blur: blur(7px);
 		--box-shadow: 0 2px 6px hsla(0, 0%, 0%, 0.1),
 			inset 1px 1px 2px hsla(0, 0%, 100%, 0.15),
 			inset 0 0 1px hsla(0, 0%, 100%, 0.1);
 		--text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.3);
 		--drop-shadow: drop-shadow(.2rem .2rem .1rem #0004);
-		--title-font: "Collegiate", sans-serif;
-		--title-size: 1.2rem;
+		--title-font: "BrassMono", sans-serif;
+		--title-size: 1rem;
 	}
 
 	.click-target-container *, .top-sites-list *, .section-title * {
@@ -45,7 +60,7 @@
 		left: 0;
 		z-index: -1;
 		overflow-x: hidden;
-		background: #000 no-repeat url(wallpapers/Firewatch.jpg) center;
+		background: #000 no-repeat var(--wallpaper) center;
 		background-size: cover;
 	}
 
@@ -102,8 +117,7 @@
 			scale: 1.05;
 
 			.icon-wrapper {
-				width: 72px !important;
-				height: 72px !important;
+				scale: 1.1;
 			}
 		}
 
@@ -167,7 +181,6 @@
 			text-wrap: nowrap !important;
 			overflow: hidden !important;
 			text-overflow: ellipsis !important;
-			transition: max-height ease-in-out .3s; // Fix return transition not working
 			line-clamp: none !important;
 			-webkit-line-clamp: none !important;
 

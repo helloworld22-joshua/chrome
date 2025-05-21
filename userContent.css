@@ -20,7 +20,7 @@
 }
 @-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
   :root {
-    --wallpaper: url(wallpapers/OuterWilds.jpg);
+    --wallpaper: url(wallpapers/Frieren.jpg);
     --blur: blur(7px);
     --box-shadow: 0 2px 6px hsla(0, 0%, 0%, 0.1),
     	inset 1px 1px 2px hsla(0, 0%, 100%, 0.15),
@@ -137,25 +137,25 @@
       background-image: url(logos/nexusmods.png) !important;
     }
     .top-site-outer:nth-child(7) .top-site-icon {
-      background-image: url(logos/maps.png) !important;
-    }
-    .top-site-outer:nth-child(8) .top-site-icon {
       background-image: url(logos/icloud.png) !important;
     }
-    .top-site-outer:nth-child(9) .top-site-icon {
-      background-image: url(logos/chatgpt.png) !important;
+    .top-site-outer:nth-child(8) .top-site-icon {
+      background-image: url(logos/todo.png) !important;
     }
-    .top-site-outer:nth-child(10) .top-site-icon {
+    .top-site-outer:nth-child(9) .top-site-icon {
       background-image: url(logos/gnome.png) !important;
     }
+    .top-site-outer:nth-child(10) .top-site-icon {
+      background-image: url(logos/maps.png) !important;
+    }
     .top-site-outer:nth-child(11) .top-site-icon {
-      background-image: url(logos/github.png) !important;
+      background-image: url(logos/chatgpt.png) !important;
     }
     .top-site-outer:nth-child(12) .top-site-icon {
-      background-image: url(logos/w3schools.png) !important;
+      background-image: url(logos/github.png) !important;
     }
     .top-site-outer:nth-child(13) .top-site-icon {
-      background-image: url(logos/idealo.png) !important;
+      background-image: url(logos/w3schools.png) !important;
     }
     .top-site-outer:nth-child(14) .top-site-icon {
       background-image: url(logos/geogebra.png) !important;

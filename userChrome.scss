@@ -1,40 +1,30 @@
-// ===============================
-// userChrome.scss for Firefox UI
-// ===============================
-
-// --------- Root Variables ---------
-// Global CSS variables for sizing, transitions, and theme
 :root {
-	--delay: 0s;						// Delay before expanding tabs
-	--transition-time: 0.2s;			// Transition time for sidebar expansion
-	--expanded-width: 250px;			// Width of the sidebar when expanded
-	--box-shadow: 0 0 1.2rem hsla(0, 0%, 7%, 0.9);	// Adds a shadow to the sidebar when expanded
-	--mac-sidebar-width: 44px;			// Mac sidebar width
-	--windows-sidebar-width: 42px;		// Windows sidebar width
-	--linux-sidebar-width: 44px;		// Linux sidebar width
-	// When changing the thickness in Sidebery (e.g. compact) change width by 2px
+	// Global CSS variables for sizing, transitions, and theme
+	--delay: 0s;
+	--transition-time: 0.2s;
+	--expanded-width: 250px;
+	--box-shadow: 0 0 1.2rem hsla(0, 0%, 7%, 0.9);
+	--mac-sidebar-width: 44px;
+	--windows-sidebar-width: 42px;
+	--linux-sidebar-width: 44px;
 }
 
-// --------- Extension Button Badge ---------
-// Removes green dot from extensions button (attention badge)
+/* Remove green dot (attention badge) from extension buttons */
 #unified-extensions-button[attention] > .toolbarbutton-icon,
 .unified-extensions-item[attention] > .unified-extensions-item-action-button.toolbarbutton-1 > .toolbarbutton-badge-stack {
 	background-image: none !important;
 }
 
-// --------- Tabs Toolbar ---------
-// Hides the main tabs toolbar (for custom tab solutions)
-#TabsToolbar,
-#TabsToolbar:not([customizing="true"]) { // Mac only?
+/* Hide the main tabs toolbar (removes native Firefox tabs UI) */
+#TabsToolbar:not([customizing="true"]),
+#TabsToolbar {
 	visibility: collapse !important;
 }
 
-// --------- Sidebar Styling ---------
-// Styles for Sidebery or similar sidebars
+/* Sidebar base styling for Sidebery or similar extensions */
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
-	// Sidebar base width and transition
-	position: relative;
-	min-width: 48px !important;
+	position: relative; // Ensures correct stacking and positioning
+	min-width: 48px !important; // Default collapsed width
 	width: 48px !important;
 	max-width: 48px !important;
 	z-index: 3;
@@ -42,81 +32,73 @@
 	transition: min-width var(--transition-time) ease-in-out !important;
 	will-change: min-width;
 
-	// Hide sidebar header
 	#sidebar-header {
-		visibility: collapse;
+		visibility: collapse; // Hide sidebar header for a cleaner look
 	}
-
-	// Sidebar docked to the right
 	&[positionend="true"] {
-		position: absolute;
+		position: absolute; // Dock sidebar to the right if needed
 		top: 0;
 		bottom: 0;
 		right: 0;
-
-		// Expand sidebar on hover
-		&:hover {
-			min-width: var(--expanded-width) !important;
-			box-shadow: var(--box-shadow);
-
-			> #sidebar {
-				min-width: var(--expanded-width) !important;
-				transition: min-width var(--transition-time) ease-in-out var(--delay);
-				clip-path: inset(0px -15px 0px -15px);
-				box-shadow: var(--box-shadow);
-			}
-		}
 	}
-
-	// Sidebar content transition
 	> #sidebar {
 		transition: min-width var(--transition-time) ease-in-out var(--delay) !important;
 		will-change: min-width;
 	}
+	&:hover > #sidebar {
+		// Expand sidebar on hover
+		min-width: var(--expanded-width) !important;
+		transition: min-width var(--transition-time) ease-in-out var(--delay);
+		clip-path: inset(0px -15px 0px -15px);
+		box-shadow: var(--box-shadow);
+	}
+	&[positionend="true"]:hover {
+		// Add shadow when expanded and docked right
+		min-width: var(--expanded-width) !important;
+		box-shadow: var(--box-shadow);
+	}
 }
 
-// Sidebar and header border removal
+/* Remove border from sidebar and header for a flat look */
 #sidebar,
 #sidebar-header {
 	border: none !important;
 }
 
-// Sidebar hover status panel tweaks
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([positionend]):hover ~ #appcontent {
-	#statuspanel {
-		inset-inline: auto 0px !important;
-	}
-	#statuspanel-label {
-		margin-inline: 0px !important;
-		border-left-style: solid !important;
-	}
+/* Adjust status panel position and style when sidebar is hovered */
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([positionend]):hover ~ #appcontent #statuspanel {
+	inset-inline: auto 0px !important;
+}
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([positionend]):hover ~ #appcontent #statuspanel-label {
+	margin-inline: 0px !important;
+	border-left-style: solid !important;
 }
 
-// Hide sidebar splitter (resizer)
+/* Hide the sidebar splitter (resizer) for a seamless sidebar */
 #sidebar-splitter {
 	display: none !important;
 }
 
-// Sidebar width reset for regular sidebar
+/* Reset width for the regular sidebar when not using Sidebery */
 #sidebar-box {
 	width: initial !important;
 }
 
-// --------- MacOS Specific Styles ---------
+/* ===========================
+   MacOS specific styles
+   =========================== */
 @media (-moz-platform: macos) {
-	// Mac sidebar sizing
+	// Set sidebar width for Mac
 	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
 		min-width: var(--mac-sidebar-width) !important;
 		width: var(--mac-sidebar-width) !important;
 		max-width: var(--mac-sidebar-width) !important;
 	}
-
-	// Padding for nav-bar to accommodate window controls
+	// Add left padding to nav-bar to make space for window controls
 	:root:not([customizing="true"]) #nav-bar:not([inFullscreen]) {
 		padding-left: 80px !important;
 	}
-
-	// Show window controls in TabsToolbar
+	// Show window controls in the TabsToolbar on Mac
 	:root:not([customizing="true"]) #TabsToolbar .titlebar-buttonbox-container {
 		visibility: visible !important;
 		position: absolute;
@@ -126,53 +108,39 @@
 	}
 }
 
-// --------- Linux/GTK Specific Styles ---------
+/* ===========================
+   Linux/GTK specific styles
+   =========================== */
 @media (-moz-gtk-csd-available), (-moz-platform: linux) {
-	// Linux sidebar sizing
+	// Set sidebar width for Linux
 	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
 		min-width: var(--linux-sidebar-width) !important;
 		width: var(--linux-sidebar-width) !important;
 		max-width: var(--linux-sidebar-width) !important;
 	}
-
-	// Remove unwanted toolbar background and shadow
+	// Remove background and shadow from toolbars for a flat look
 	.browser-toolbar:not(.titlebar-color) {
 		background-color: transparent !important;
 		box-shadow: none !important;
 	}
-
-	// Hide TabsToolbar
-	#TabsToolbar:not([customizing="true"]) {
-		visibility: collapse !important;
-	}
-
 	// Remove extra padding from menubar
 	#toolbar-menubar {
 		padding-top: 0px !important;
 	}
-
-	// Fix for window controls not working in FF 123+
+	// Fix for window controls not working in some Firefox versions
 	:root[tabsintitlebar] #titlebar {
 		will-change: auto !important;
 	}
-
-	// Show window controls when menubar is inactive
-	:root:not([customizing="true"]) #toolbar-menubar[inactive]+#TabsToolbar .titlebar-buttonbox-container {
-		// visibility: visible !important;
+	// Hide window controls in menubar when not needed
+	#toolbar-menubar .titlebar-buttonbox-container {
 		visibility: hidden !important;
-		position: absolute;
-		top: var(--uc-win-ctrl-vertical-offset);
-		display: block;
-		z-index: 101;
 	}
-
-	// Rounded nav-bar corners
+	// Add rounded corners to nav-bar when not tiled or customizing
 	:root[tabsintitlebar][sizemode="normal"]:not([gtktiledwindow="true"]):not([customizing="true"]) #nav-bar {
 		border-top-left-radius: env(-moz-gtk-csd-titlebar-radius);
 		border-top-right-radius: env(-moz-gtk-csd-titlebar-radius);
 	}
-
-	// Window control sizing and padding variables
+	// Set window control button variables for normal and lwtheme
 	:root[tabsintitlebar]:not([customizing="true"]) {
 		--uc-win-ctrl-btn-width: 38px;
 		--uc-win-ctrl-padding: 12px;
@@ -185,8 +153,7 @@
 		--uc-win-ctrl-vertical-offset: 5px;
 		--uc-win-ctrl-drag-space: 20px;
 	}
-
-	// Window control padding for different button combos
+	// Dynamically set nav-bar padding based on which window controls are present
 	@media (-moz-gtk-csd-minimize-button),
 	(-moz-gtk-csd-maximize-button),
 	(-moz-gtk-csd-close-button) {
@@ -206,114 +173,36 @@
 			--uc-navbar-padding: calc(var(--uc-win-ctrl-btn-width) * 3);
 		}
 	}
-
-	// Window controls on right or left depending on placement
+	// Place window controls inside nav-bar, right or left depending on placement
 	@media (-moz-gtk-csd-minimize-button),
 	(-moz-gtk-csd-maximize-button),
 	(-moz-gtk-csd-close-button) {
 		@media not (-moz-gtk-csd-reversed-placement) {
 			#nav-bar {
+				// Add right padding for window controls
 				padding-inline: 0 calc(var(--uc-navbar-padding, 0) + var(--uc-win-ctrl-padding) + var(--uc-win-ctrl-drag-space)) !important;
 			}
 			.titlebar-buttonbox-container {
-				right: 0;
+				right: 0; // Place controls on the right
 			}
 		}
 		@media (-moz-gtk-csd-reversed-placement) {
 			#nav-bar {
+				// Add left padding for window controls
 				padding-inline: calc(var(--uc-navbar-padding, 0) + var(--uc-win-ctrl-padding) + var(--uc-win-ctrl-drag-space)) 0 !important;
 			}
 			.titlebar-buttonbox-container {
-				left: 0;
+				left: 0; // Place controls on the left
 			}
 		}
 	}
-
-	// Hide window controls in fullscreen
+	// Hide window controls in fullscreen or DOM fullscreen
 	#navigator-toolbox[style*="margin-top: -"] .titlebar-buttonbox-container,
 	[inDOMFullscreen="true"] .titlebar-buttonbox-container {
 		transform: translateY(-100px)
 	}
-}
-
-// --------- Windows Specific Styles ---------
-@media (-moz-platform: windows), (-moz-platform: windows-win10) {
-	// Windows sidebar sizing
-	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
-		min-width: var(--windows-sidebar-width) !important;
-		width: var(--windows-sidebar-width) !important;
-		max-width: var(--windows-sidebar-width) !important;
-	}
-
-	// Set window control width variable
-	:root[tabsintitlebar] {
-		--uc-window-control-width: 137px;
-	}
-
-	// Toolbar height variable
-	:root:not([uidensity="compact"]) {
-		--uc-toolbar-height: 38px;
-	}
-
-	// Hide TabsToolbar
-	#TabsToolbar {
-		visibility: collapse !important;
-	}
-
-	// Show window controls in nav-bar
+	/* Place window controls inside nav-bar (address bar) for Linux */
 	#nav-bar .titlebar-buttonbox-container {
-		display: flex !important;
-	}
-
-	// Remove negative margin from nav-bar so it sits flush at the top
-	:root:not([inFullscreen]) #nav-bar {
-		margin-top: 0 !important;
-		z-index: 2;
-	}
-
-	// Menubar sizing and positioning
-	#toolbar-menubar {
-		min-height: unset !important;
-		height: var(--uc-toolbar-height) !important;
-		position: relative;
-	}
-
-	// Menubar background and border
-	#main-menubar {
-		-moz-box-flex: 1;
-		background-color: var(--toolbar-bgcolor, --toolbar-non-lwt-bgcolor);
-		background-clip: padding-box;
-		border-right: 30px solid transparent;
-		border-image: linear-gradient(to left, transparent, var(--toolbar-bgcolor, --toolbar-non-lwt-bgcolor) 30px) 20 / 30px;
-	}
-
-	// Menubar z-index
-	#toolbar-menubar:not([inactive]) {
-		z-index: 2;
-	}
-
-	// Hide menubar items when inactive
-	#toolbar-menubar[inactive]>#menubar-items {
-		opacity: 0;
-		pointer-events: none;
-		margin-left: var(--uc-window-drag-space-width, 0px);
-	}
-
-	// Remove border in fullscreen
-	:root[inFullscreen] #nav-bar {
-		border-right: none !important;
-	}
-}
-
-// --------- Universal Window Controls in Nav-Bar ---------
-// Place window controls inside nav-bar (address bar)
-#nav-bar {
-	// Ensure nav-bar has enough right padding for the buttons
-	padding-right: var(--uc-window-control-width, 100px) !important;
-	position: relative;
-
-	// Show window controls and place them inside nav-bar
-	.titlebar-buttonbox-container {
 		display: flex !important;
 		position: absolute !important;
 		top: 0;
@@ -322,15 +211,80 @@
 		align-items: center;
 		z-index: 10;
 	}
+	#nav-bar {
+		padding-right: var(--uc-window-control-width, 100px) !important;
+		position: relative;
+	}
+	:root:not([inFullscreen]) #nav-bar {
+		margin-top: 0 !important;
+		z-index: 2;
+	}
+	:root[inFullscreen] #nav-bar {
+		border-right: none !important;
+	}
+	#navigator-toolbox[style*="margin-top: -"] .titlebar-buttonbox-container,
+	[inDOMFullscreen="true"] .titlebar-buttonbox-container {
+		transform: translateY(-100px)
+	}
 }
 
-// Remove border in fullscreen
-:root[inFullscreen] #nav-bar {
-	border-right: none !important;
-}
-
-// Hide window controls in fullscreen
-#navigator-toolbox[style*="margin-top: -"] .titlebar-buttonbox-container,
-[inDOMFullscreen="true"] .titlebar-buttonbox-container {
-	transform: translateY(-100px)
+/* ===========================
+   Windows specific styles
+   =========================== */
+@media (-moz-platform: windows), (-moz-platform: windows-win10) {
+	// Set sidebar width for Windows
+	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+		min-width: var(--windows-sidebar-width) !important;
+		width: var(--windows-sidebar-width) !important;
+		max-width: var(--windows-sidebar-width) !important;
+	}
+	// Set window control width variable for Windows
+	:root[tabsintitlebar] {
+		--uc-window-control-width: 137px;
+	}
+	// Set toolbar height variable for Windows
+	:root:not([uidensity="compact"]) {
+		--uc-toolbar-height: 38px;
+	}
+	// Hide TabsToolbar on Windows
+	#TabsToolbar {
+		visibility: collapse !important;
+	}
+	// Show window controls in nav-bar (Windows)
+	#nav-bar .titlebar-buttonbox-container {
+		display: flex !important;
+	}
+	// Remove negative margin from nav-bar so it sits flush at the top
+	:root:not([inFullscreen]) #nav-bar {
+		margin-top: calc(0px - var(--uc-toolbar-height));
+		z-index: 2;
+	}
+	// Menubar sizing and positioning
+	#toolbar-menubar {
+		min-height: unset !important;
+		height: var(--uc-toolbar-height) !important;
+		position: relative;
+	}
+	// Menubar background and border
+	#main-menubar {
+		-moz-box-flex: 1;
+		background-color: var(--toolbar-bgcolor, --toolbar-non-lwt-bgcolor);
+		background-clip: padding-box;
+		border-right: 30px solid transparent;
+		border-image: linear-gradient(to left, transparent, var(--toolbar-bgcolor, --toolbar-non-lwt-bgcolor) 30px) 20 / 30px;
+	}
+	// Menubar z-index
+	#toolbar-menubar:not([inactive]) {
+		z-index: 2;
+	}
+	// Hide menubar items when inactive
+	#toolbar-menubar[inactive]>#menubar-items {
+		opacity: 0;
+		pointer-events: none;
+		margin-left: var(--uc-window-drag-space-width, 0px);
+	}
+	// Remove border in fullscreen
+	:root[inFullscreen] #nav-bar {
+		border-right: none !important;
+	}
 }

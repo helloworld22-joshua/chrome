@@ -8,16 +8,19 @@
   --linux-sidebar-width: 44px;
 }
 
+/* Remove green dot (attention badge) from extension buttons */
 #unified-extensions-button[attention] > .toolbarbutton-icon,
 .unified-extensions-item[attention] > .unified-extensions-item-action-button.toolbarbutton-1 > .toolbarbutton-badge-stack {
   background-image: none !important;
 }
 
-#TabsToolbar,
-#TabsToolbar:not([customizing=true]) {
+/* Hide the main tabs toolbar (removes native Firefox tabs UI) */
+#TabsToolbar:not([customizing=true]),
+#TabsToolbar {
   visibility: collapse !important;
 }
 
+/* Sidebar base styling for Sidebery or similar extensions */
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] {
   position: relative;
   min-width: 48px !important;
@@ -37,43 +40,51 @@
   bottom: 0;
   right: 0;
 }
-#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action][positionend=true]:hover {
-  min-width: var(--expanded-width) !important;
-  box-shadow: var(--box-shadow);
+#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] > #sidebar {
+  transition: min-width var(--transition-time) ease-in-out var(--delay) !important;
+  will-change: min-width;
 }
-#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action][positionend=true]:hover > #sidebar {
+#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action]:hover > #sidebar {
   min-width: var(--expanded-width) !important;
   transition: min-width var(--transition-time) ease-in-out var(--delay);
   -webkit-clip-path: inset(0px -15px 0px -15px);
           clip-path: inset(0px -15px 0px -15px);
   box-shadow: var(--box-shadow);
 }
-#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] > #sidebar {
-  transition: min-width var(--transition-time) ease-in-out var(--delay) !important;
-  will-change: min-width;
+#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action][positionend=true]:hover {
+  min-width: var(--expanded-width) !important;
+  box-shadow: var(--box-shadow);
 }
 
+/* Remove border from sidebar and header for a flat look */
 #sidebar,
 #sidebar-header {
   border: none !important;
 }
 
+/* Adjust status panel position and style when sidebar is hovered */
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action]:not([positionend]):hover ~ #appcontent #statuspanel {
   inset-inline: auto 0px !important;
 }
+
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action]:not([positionend]):hover ~ #appcontent #statuspanel-label {
   margin-inline: 0px !important;
   border-left-style: solid !important;
 }
 
+/* Hide the sidebar splitter (resizer) for a seamless sidebar */
 #sidebar-splitter {
   display: none !important;
 }
 
+/* Reset width for the regular sidebar when not using Sidebery */
 #sidebar-box {
   width: initial !important;
 }
 
+/* ===========================
+   MacOS specific styles
+   =========================== */
 @media (-moz-platform: macos) {
   #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] {
     min-width: var(--mac-sidebar-width) !important;
@@ -91,6 +102,9 @@
     display: block;
   }
 }
+/* ===========================
+   Linux/GTK specific styles
+   =========================== */
 @media (-moz-gtk-csd-available), (-moz-platform: linux) {
   #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] {
     min-width: var(--linux-sidebar-width) !important;
@@ -101,21 +115,14 @@
     background-color: transparent !important;
     box-shadow: none !important;
   }
-  #TabsToolbar:not([customizing=true]) {
-    visibility: collapse !important;
-  }
   #toolbar-menubar {
     padding-top: 0px !important;
   }
   :root[tabsintitlebar] #titlebar {
     will-change: auto !important;
   }
-  :root:not([customizing=true]) #toolbar-menubar[inactive] + #TabsToolbar .titlebar-buttonbox-container {
+  #toolbar-menubar .titlebar-buttonbox-container {
     visibility: hidden !important;
-    position: absolute;
-    top: var(--uc-win-ctrl-vertical-offset);
-    display: block;
-    z-index: 101;
   }
   :root[tabsintitlebar][sizemode=normal]:not([gtktiledwindow=true]):not([customizing=true]) #nav-bar {
     border-top-left-radius: env(-moz-gtk-csd-titlebar-radius);
@@ -133,6 +140,7 @@
     --uc-win-ctrl-vertical-offset: 5px;
     --uc-win-ctrl-drag-space: 20px;
   }
+  /* Place window controls inside nav-bar (address bar) for Linux */
 }
 @media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button), (-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-available) and (-moz-gtk-csd-close-button), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button), (-moz-platform: linux) and (-moz-gtk-csd-maximize-button), (-moz-platform: linux) and (-moz-gtk-csd-close-button) {
   #nav-bar {
@@ -170,7 +178,34 @@
   [inDOMFullscreen=true] .titlebar-buttonbox-container {
     transform: translateY(-100px);
   }
+  #nav-bar .titlebar-buttonbox-container {
+    display: flex !important;
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    height: 100%;
+    align-items: center;
+    z-index: 10;
+  }
+  #nav-bar {
+    padding-right: var(--uc-window-control-width, 100px) !important;
+    position: relative;
+  }
+  :root:not([inFullscreen]) #nav-bar {
+    margin-top: 0 !important;
+    z-index: 2;
+  }
+  :root[inFullscreen] #nav-bar {
+    border-right: none !important;
+  }
+  #navigator-toolbox[style*="margin-top: -"] .titlebar-buttonbox-container,
+  [inDOMFullscreen=true] .titlebar-buttonbox-container {
+    transform: translateY(-100px);
+  }
 }
+/* ===========================
+   Windows specific styles
+   =========================== */
 @media (-moz-platform: windows), (-moz-platform: windows-win10) {
   #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] {
     min-width: var(--windows-sidebar-width) !important;
@@ -190,7 +225,7 @@
     display: flex !important;
   }
   :root:not([inFullscreen]) #nav-bar {
-    margin-top: 0 !important;
+    margin-top: calc(0px - var(--uc-toolbar-height));
     z-index: 2;
   }
   #toolbar-menubar {
@@ -217,26 +252,4 @@
   :root[inFullscreen] #nav-bar {
     border-right: none !important;
   }
-}
-#nav-bar {
-  padding-right: var(--uc-window-control-width, 100px) !important;
-  position: relative;
-}
-#nav-bar .titlebar-buttonbox-container {
-  display: flex !important;
-  position: absolute !important;
-  top: 0;
-  right: 0;
-  height: 100%;
-  align-items: center;
-  z-index: 10;
-}
-
-:root[inFullscreen] #nav-bar {
-  border-right: none !important;
-}
-
-#navigator-toolbox[style*="margin-top: -"] .titlebar-buttonbox-container,
-[inDOMFullscreen=true] .titlebar-buttonbox-container {
-  transform: translateY(-100px);
 }/*# sourceMappingURL=userChrome.css.map */

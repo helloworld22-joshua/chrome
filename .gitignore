@@ -1,0 +1,26 @@
+# macOS Finder metadata
+.DS_Store
+
+# macOS resource forks
+._*
+
+# Thumbnails
+._.Thumbs.db
+Thumbs.db
+
+# System-wide ignore
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Temporary files
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# VSCode settings (if applicable)
+.vscode/
+
+# Log files
+*.log

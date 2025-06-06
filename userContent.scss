@@ -150,6 +150,10 @@
 			background-color: transparent !important;
 			background-size: contain !important;
 		}
+
+		.icon-pin-small {
+			display: none !important;
+		}
 	}
 
 	@media (-moz-platform: windows), (-moz-platform: windows-win10), (-moz-platform: linux) {
@@ -195,10 +199,6 @@
 
 		&:not(.pinned) span {
 			font-style: italic;
-		}
-
-		.icon-pin-small {
-			display: none !important;
 		}
 	}
 

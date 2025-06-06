@@ -117,6 +117,9 @@
     background-color: transparent !important;
     background-size: contain !important;
   }
+  .top-site-outer .icon-pin-small {
+    display: none !important;
+  }
   @media (-moz-platform: windows), (-moz-platform: windows-win10), (-moz-platform: linux) {
     .top-site-outer:nth-child(1) .top-site-icon {
       background-image: url(logos/youtube.png) !important;
@@ -189,9 +192,6 @@
   }
   .title:not(.pinned) span {
     font-style: italic;
-  }
-  .title .icon-pin-small {
-    display: none !important;
   }
   .context-menu {
     background: hsla(0, 0%, 100%, 0.05) !important;

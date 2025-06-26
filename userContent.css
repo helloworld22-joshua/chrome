@@ -30,7 +30,9 @@
     --title-font: "BrassMono", sans-serif;
     --title-size: 1rem;
   }
-  .click-target-container *, .top-sites-list *, .section-title * {
+  .click-target-container *,
+  .top-sites-list *,
+  .section-title * {
     color: #fff !important;
     text-shadow: var(--text-shadow) !important;
   }
@@ -46,7 +48,8 @@
     background: #000 no-repeat var(--wallpaper) center;
     background-size: cover;
   }
-  .personalize-button:hover, .customize-menu {
+  .personalize-button:hover,
+  .customize-menu {
     background-color: hsla(0, 0%, 100%, 0.2) !important;
     backdrop-filter: var(--blur);
   }
@@ -64,6 +67,7 @@
     display: none;
   }
   .outer-wrapper {
+    overflow-x: hidden;
     transition: filter 3s cubic-bezier(1, 0, 0, 1), -webkit-backdrop-filter 3s cubic-bezier(1, 0, 0, 1);
     transition: filter 3s cubic-bezier(1, 0, 0, 1), backdrop-filter 3s cubic-bezier(1, 0, 0, 1);
     transition: filter 3s cubic-bezier(1, 0, 0, 1), backdrop-filter 3s cubic-bezier(1, 0, 0, 1), -webkit-backdrop-filter 3s cubic-bezier(1, 0, 0, 1);

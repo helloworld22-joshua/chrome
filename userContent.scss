@@ -1,266 +1,319 @@
 @font-face {
 	font-family: "Archimoto";
 	src: url("fonts/archimoto-font/Demoarchimotov01Black-8MD5g.otf") format("woff2"),
-		 url("fonts/archimoto-font/Demoarchimotov01Black-8MD5g.otf") format("woff"),
-		 url("fonts/archimoto-font/Demoarchimotov01Black-8MD5g.otf") format("truetype");
+		url("fonts/archimoto-font/Demoarchimotov01Black-8MD5g.otf") format("woff"),
+		url("fonts/archimoto-font/Demoarchimotov01Black-8MD5g.otf") format("truetype");
 }
 
 @font-face {
 	font-family: "BrassMono";
 	src: url("fonts/brass-mono-font/BrassMonoBold-w16rP.ttf") format("woff2"),
-		 url("fonts/brass-mono-font/BrassMonoBold-w16rP.ttf") format("woff"),
-		 url("fonts/brass-mono-font/BrassMonoBold-w16rP.ttf") format("truetype");
+		url("fonts/brass-mono-font/BrassMonoBold-w16rP.ttf") format("woff"),
+		url("fonts/brass-mono-font/BrassMonoBold-w16rP.ttf") format("truetype");
 }
 
 @font-face {
 	font-family: "Collegiate";
 	src: url("fonts/collegiate-font/Collegiate-wM1w.ttf") format("woff2"),
-		 url("fonts/collegiate-font/Collegiate-wM1w.ttf") format("woff"),
-		 url("fonts/collegiate-font/Collegiate-wM1w.ttf") format("truetype");
+		url("fonts/collegiate-font/Collegiate-wM1w.ttf") format("woff"),
+		url("fonts/collegiate-font/Collegiate-wM1w.ttf") format("truetype");
 }
 
 @font-face {
 	font-family: "Goldleaf";
 	src: url("fonts/goldleaf-bold-font/GoldleafBoldPersonalUseBold-eZ4dO.ttf") format("woff2"),
-		 url("fonts/goldleaf-bold-font/GoldleafBoldPersonalUseBold-eZ4dO.ttf") format("woff"),
-		 url("fonts/goldleaf-bold-font/GoldleafBoldPersonalUseBold-eZ4dO.ttf") format("truetype");
+		url("fonts/goldleaf-bold-font/GoldleafBoldPersonalUseBold-eZ4dO.ttf") format("woff"),
+		url("fonts/goldleaf-bold-font/GoldleafBoldPersonalUseBold-eZ4dO.ttf") format("truetype");
 }
 
 @font-face {
 	font-family: "Requiner";
 	src: url("fonts/requiner-font/Requiner-6RRLM.otf") format("woff2"),
-		 url("fonts/requiner-font/Requiner-6RRLM.otf") format("woff"),
-		 url("fonts/requiner-font/Requiner-6RRLM.otf") format("truetype");
+		url("fonts/requiner-font/Requiner-6RRLM.otf") format("woff"),
+		url("fonts/requiner-font/Requiner-6RRLM.otf") format("truetype");
 }
 
-@-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
-	:root {
-		--wallpaper: url(wallpapers/Frieren.jpg);
-		--blur: blur(7px);
-		--box-shadow: 0 2px 6px hsla(0, 0%, 0%, 0.1),
-			inset 1px 1px 2px hsla(0, 0%, 100%, 0.15),
-			inset 0 0 1px hsla(0, 0%, 100%, 0.1);
-		--text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.3);
-		--drop-shadow: drop-shadow(.2rem .2rem .1rem #0004);
-		--title-font: "BrassMono", sans-serif;
-		--title-size: 1rem;
+@-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing){
+:root {
+	--wallpaper: url(wallpapers/Frieren.jpg);
+	--blur: blur(7px);
+	--box-shadow: 0 2px 6px hsla(0, 0%, 0%, 0.1),
+		inset 1px 1px 2px hsla(0, 0%, 100%, 0.15),
+		inset 0 0 1px hsla(0, 0%, 100%, 0.1);
+	--text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.3);
+	--drop-shadow: drop-shadow(.2rem .2rem .1rem #0004);
+	--title-font: "BrassMono", sans-serif;
+	--title-size: 1rem;
+}
+
+.click-target-container *,
+.top-sites-list *,
+.section-title * {
+	color: #fff !important;
+	text-shadow: var(--text-shadow) !important;
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	overflow-x: hidden;
+	background: #000 no-repeat var(--wallpaper) center;
+	background-size: cover;
+}
+
+.personalize-button:hover,
+.customize-menu {
+	background-color: hsla(0, 0%, 100%, 0.2) !important;
+	backdrop-filter: var(--blur);
+}
+
+.customize-menu .close-button-wrapper {
+	background: none !important;
+}
+
+.wallpaper-list {
+	background: none !important;
+	backdrop-filter: blur(3px);
+}
+
+.home-section {
+	.selector {
+		background-color: transparent !important;
 	}
 
-	.click-target-container *, .top-sites-list *, .section-title * {
-		color: #fff !important;
-		text-shadow: var(--text-shadow) !important;
+	.divider {
+		display: none;
 	}
+}
 
-	body::before {
-		content: "";
-		position: fixed;
-		width: 100vw;
-		height: 100vh;
-		top: 0;
-		left: 0;
-		z-index: -1;
-		overflow-x: hidden;
-		background: #000 no-repeat var(--wallpaper) center;
-		background-size: cover;
+.outer-wrapper {
+	overflow-x: hidden;
+	transition: filter 3s cubic-bezier(1, 0, 0, 1), backdrop-filter 3s cubic-bezier(1, 0, 0, 1);
+
+	&:active:not(:hover) {
+		filter: invert(1);
+		backdrop-filter: invert(.001);
 	}
+}
 
-	.personalize-button:hover, .customize-menu {
-		background-color: hsla(0, 0%, 100%, 0.2) !important;
-		backdrop-filter: var(--blur);
-	}
+.search-wrapper {
+	background: none !important;
+	border: none !important;
+}
 
-	.customize-menu .close-button-wrapper {
-		background: none !important;
-	}
+.search-inner-wrapper {
+	display: none !important;
+}
 
-	.wallpaper-list {
-		background: none !important;
-		backdrop-filter: blur(3px);
-	}
+.top-site-outer {
+	border-radius: 12px;
+	transition: all ease-in-out .3s, scale ease-in-out .2s;
 
-	.home-section {
-		.selector {
-			background-color: transparent !important;
-		}
-
-		.divider {
-			display: none;
-		}
-	}
-
-	.outer-wrapper {
-		transition: filter 3s cubic-bezier(1, 0, 0, 1), backdrop-filter 3s cubic-bezier(1, 0, 0, 1);
-
-		&:active:not(:hover) {
-			filter: invert(1);
-			backdrop-filter: invert(.001);
-		}
-	}
-
-	.search-wrapper {
-		background: none !important;
-		border: none !important;
-	}
-
-	.search-inner-wrapper {
-		display: none !important;
-	}
-
-	.top-site-outer {
-		border-radius: 12px;
-		transition: all ease-in-out .3s, scale ease-in-out .2s;
-
-		&:is(.active, :focus-within, :hover) {
-			background-color: hsla(0, 0%, 100%, 0.05) !important;
-			backdrop-filter: var(--blur);
-			box-shadow: var(--box-shadow);
-			scale: 1.05;
-
-			.icon-wrapper {
-				scale: 1.1;
-			}
-		}
-
-		&:active {
-			scale: .95;
-		}
-
-		&.active ~ * {
-			pointer-events: none;
-			opacity: 0;
-		}
-
-		.tile {
-			background: none !important;
-			box-shadow: none !important;
-			outline: none !important;
-		}
-
-		.icon-wrapper {
-			width: 64px !important;
-			height: 64px !important;
-			border-radius: 8px !important;
-			filter: var(--drop-shadow);
-			transition: all ease-in-out .3s;
-		}
-
-		.top-site-icon {
-			width: 100% !important;
-			height: 100% !important;
-			background-color: transparent !important;
-			background-size: contain !important;
-		}
-
-		.icon-pin-small {
-			display: none !important;
-		}
-	}
-
-	@media (-moz-platform: windows), (-moz-platform: windows-win10), (-moz-platform: linux) {
-		.top-site-outer:nth-child(1) .top-site-icon { background-image: url(logos/youtube.png) !important; }
-		.top-site-outer:nth-child(2) .top-site-icon { background-image: url(logos/crunchyroll.png) !important; }
-		.top-site-outer:nth-child(3) .top-site-icon { background-image: url(logos/hianime.png) !important; }
-		.top-site-outer:nth-child(4) .top-site-icon { background-image: url(logos/netflix.png) !important; }
-		.top-site-outer:nth-child(5) .top-site-icon { background-image: url(logos/mangafire.png) !important; }
-		.top-site-outer:nth-child(6) .top-site-icon { background-image: url(logos/nexusmods.png) !important; }
-		.top-site-outer:nth-child(7) .top-site-icon { background-image: url(logos/icloud.png) !important; }
-		.top-site-outer:nth-child(8) .top-site-icon { background-image: url(logos/todo.png) !important; }
-		.top-site-outer:nth-child(9) .top-site-icon { background-image: url(logos/gnome.png) !important; }
-		.top-site-outer:nth-child(10) .top-site-icon { background-image: url(logos/maps.png) !important; }
-		.top-site-outer:nth-child(11) .top-site-icon { background-image: url(logos/chatgpt.png) !important; }
-		.top-site-outer:nth-child(12) .top-site-icon { background-image: url(logos/github.png) !important; }
-		.top-site-outer:nth-child(13) .top-site-icon { background-image: url(logos/w3schools.png) !important; }
-		.top-site-outer:nth-child(14) .top-site-icon { background-image: url(logos/geogebra.png) !important; }
-		.top-site-outer:nth-child(15) .top-site-icon { background-image: url(logos/steamdb.png) !important; }
-		.top-site-outer:nth-child(16) .top-site-icon { background-image: url(logos/proton.png) !important; }
-	}
-
-	.title {
-		span {
-			font-family: var(--title-font);
-			font-size: var(--title-size);
-			max-height: 22px;
-			user-select: none;
-			word-break: break-word !important;
-			text-wrap: nowrap !important;
-			overflow: hidden !important;
-			text-overflow: ellipsis !important;
-			line-clamp: none !important;
-			-webkit-line-clamp: none !important;
-
-			&:hover {
-				max-height: 100px;
-				contain: none !important;
-				text-wrap: wrap !important;
-				overflow: unset !important;
-				white-space: nowrap;
-			}
-		}
-
-		&:not(.pinned) span {
-			font-style: italic;
-		}
-	}
-
-	.context-menu {
-		background: hsla(0, 0%, 100%, 0.05) !important;
-		backdrop-filter: var(--blur);
-		box-shadow: var(--box-shadow) !important;
-	}
-
-	.context-menu-button {
-		top: 3px !important;
-		border-radius: 14px !important;
-	}
-
-	.logo-and-wordmark {
-		margin-bottom: 0 !important;
-	}
-
-	.logo-and-wordmark-wrapper {
-		.logo {
-			border-radius: 43%;
-			filter: drop-shadow(-.08rem .3rem .2rem #df0d65c0) drop-shadow(.2rem -.3rem .2rem #ffde41c0);
-			transition: filter 1s;
-
-			&:hover {
-				filter: drop-shadow(-.08rem .3rem .5rem #625ad9c0) drop-shadow(.2rem -.3rem .5rem #bb3ae6c0);
-				animation: barrelRoll infinite linear .5s;
-			}
-
-			&:active {
-				position: relative;
-				left: 0;
-				animation: barrelRoll infinite linear .5s, sonic linear 1s forwards;
-			}
-		}
-
-		.wordmark {
-			filter: drop-shadow(.2rem .2rem .1rem #0004);
-		}
-	}
-
-	.discovery-stream article {
+	&:is(.active, :focus-within, :hover) {
 		background-color: hsla(0, 0%, 100%, 0.05) !important;
 		backdrop-filter: var(--blur);
 		box-shadow: var(--box-shadow);
+		scale: 1.05;
+
+		.icon-wrapper {
+			scale: 1.1;
+		}
 	}
 
-	.card-outer {
-		background-color: hsla(0, 0%, 100%, 0.05) !important;
-		backdrop-filter: var(--blur);
+	&:active {
+		scale: .95;
 	}
 
-	.card .card-context {
+	&.active~* {
+		pointer-events: none;
+		opacity: 0;
+	}
+
+	.tile {
 		background: none !important;
+		box-shadow: none !important;
+		outline: none !important;
+	}
+
+	.icon-wrapper {
+		width: 64px !important;
+		height: 64px !important;
+		border-radius: 8px !important;
+		filter: var(--drop-shadow);
+		transition: all ease-in-out .3s;
+	}
+
+	.top-site-icon {
+		width: 100% !important;
+		height: 100% !important;
+		background-color: transparent !important;
+		background-size: contain !important;
+	}
+
+	.icon-pin-small {
+		display: none !important;
 	}
 }
 
-@keyframes barrelRoll {
-		to {
-			rotate: 1turn;
+@media (-moz-platform: windows),
+(-moz-platform: windows-win10),
+(-moz-platform: linux) {
+	.top-site-outer:nth-child(1) .top-site-icon {
+		background-image: url(logos/youtube.png) !important;
+	}
+
+	.top-site-outer:nth-child(2) .top-site-icon {
+		background-image: url(logos/crunchyroll.png) !important;
+	}
+
+	.top-site-outer:nth-child(3) .top-site-icon {
+		background-image: url(logos/hianime.png) !important;
+	}
+
+	.top-site-outer:nth-child(4) .top-site-icon {
+		background-image: url(logos/netflix.png) !important;
+	}
+
+	.top-site-outer:nth-child(5) .top-site-icon {
+		background-image: url(logos/mangafire.png) !important;
+	}
+
+	.top-site-outer:nth-child(6) .top-site-icon {
+		background-image: url(logos/nexusmods.png) !important;
+	}
+
+	.top-site-outer:nth-child(7) .top-site-icon {
+		background-image: url(logos/icloud.png) !important;
+	}
+
+	.top-site-outer:nth-child(8) .top-site-icon {
+		background-image: url(logos/todo.png) !important;
+	}
+
+	.top-site-outer:nth-child(9) .top-site-icon {
+		background-image: url(logos/gnome.png) !important;
+	}
+
+	.top-site-outer:nth-child(10) .top-site-icon {
+		background-image: url(logos/maps.png) !important;
+	}
+
+	.top-site-outer:nth-child(11) .top-site-icon {
+		background-image: url(logos/chatgpt.png) !important;
+	}
+
+	.top-site-outer:nth-child(12) .top-site-icon {
+		background-image: url(logos/github.png) !important;
+	}
+
+	.top-site-outer:nth-child(13) .top-site-icon {
+		background-image: url(logos/w3schools.png) !important;
+	}
+
+	.top-site-outer:nth-child(14) .top-site-icon {
+		background-image: url(logos/geogebra.png) !important;
+	}
+
+	.top-site-outer:nth-child(15) .top-site-icon {
+		background-image: url(logos/steamdb.png) !important;
+	}
+
+	.top-site-outer:nth-child(16) .top-site-icon {
+		background-image: url(logos/proton.png) !important;
+	}
+}
+
+.title {
+	span {
+		font-family: var(--title-font);
+		font-size: var(--title-size);
+		max-height: 22px;
+		user-select: none;
+		word-break: break-word !important;
+		text-wrap: nowrap !important;
+		overflow: hidden !important;
+		text-overflow: ellipsis !important;
+		line-clamp: none !important;
+		-webkit-line-clamp: none !important;
+
+		&:hover {
+			max-height: 100px;
+			contain: none !important;
+			text-wrap: wrap !important;
+			overflow: unset !important;
+			white-space: nowrap;
 		}
 	}
+
+	&:not(.pinned) span {
+		font-style: italic;
+	}
+}
+
+.context-menu {
+	background: hsla(0, 0%, 100%, 0.05) !important;
+	backdrop-filter: var(--blur);
+	box-shadow: var(--box-shadow) !important;
+}
+
+.context-menu-button {
+	top: 3px !important;
+	border-radius: 14px !important;
+}
+
+.logo-and-wordmark {
+	margin-bottom: 0 !important;
+}
+
+.logo-and-wordmark-wrapper {
+	.logo {
+		border-radius: 43%;
+		filter: drop-shadow(-.08rem .3rem .2rem #df0d65c0) drop-shadow(.2rem -.3rem .2rem #ffde41c0);
+		transition: filter 1s;
+
+		&:hover {
+			filter: drop-shadow(-.08rem .3rem .5rem #625ad9c0) drop-shadow(.2rem -.3rem .5rem #bb3ae6c0);
+			animation: barrelRoll infinite linear .5s;
+		}
+
+		&:active {
+			position: relative;
+			left: 0;
+			animation: barrelRoll infinite linear .5s, sonic linear 1s forwards;
+		}
+	}
+
+	.wordmark {
+		filter: drop-shadow(.2rem .2rem .1rem #0004);
+	}
+}
+
+.discovery-stream article {
+	background-color: hsla(0, 0%, 100%, 0.05) !important;
+	backdrop-filter: var(--blur);
+	box-shadow: var(--box-shadow);
+}
+
+.card-outer {
+	background-color: hsla(0, 0%, 100%, 0.05) !important;
+	backdrop-filter: var(--blur);
+}
+
+.card .card-context {
+	background: none !important;
+}
+}
+
+@keyframes barrelRoll {
+	to {
+		rotate: 1turn;
+	}
+}
 
 @keyframes sonic {
 	to {

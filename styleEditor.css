@@ -9,12 +9,9 @@ body {
 	/* background-image: linear-gradient(180deg, rgba(28,87,145,1) 0%, rgba(75,123,171,1) 40%, rgba(233,229,228,1) 60%, rgba(128,160,198,1) 80%, rgba(244,114,122,1) 90%, rgba(44,70,93,1) 98%); */
 }
 
-.Tab > * {
-background-color: transparent !important;
-}
-
-.audio {
-background-color: transparent !important;
+.Tab > *, .audio {
+	background-color: transparent !important;
+	background-color: transparent !important;
 }
 
 #root.root {

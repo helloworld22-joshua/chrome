@@ -56,44 +56,9 @@
    Linux/GTK specific styles
    =========================== */
 @media (-moz-gtk-csd-available), (-moz-platform: linux) {
-  #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] {
-    min-width: var(--linux-sidebar-width) !important;
-    width: var(--linux-sidebar-width) !important;
-    max-width: var(--linux-sidebar-width) !important;
+  #navigator-toolbox {
+    overflow: hidden !important;
   }
-  #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action]:hover {
-    min-width: var(--expanded-width) !important;
-  }
-  .browser-toolbar:not(.titlebar-color) {
-    background-color: transparent !important;
-    box-shadow: none !important;
-  }
-  #toolbar-menubar {
-    padding-top: 0px !important;
-  }
-  :root[tabsintitlebar] #titlebar {
-    will-change: auto !important;
-  }
-  #toolbar-menubar .titlebar-buttonbox-container {
-    visibility: hidden !important;
-  }
-  :root[tabsintitlebar][sizemode=normal]:not([gtktiledwindow=true]):not([customizing=true]) #nav-bar {
-    border-top-left-radius: env(-moz-gtk-csd-titlebar-radius);
-    border-top-right-radius: env(-moz-gtk-csd-titlebar-radius);
-  }
-  :root[tabsintitlebar]:not([customizing=true]) {
-    --uc-win-ctrl-btn-width: 38px;
-    --uc-win-ctrl-padding: 12px;
-    --uc-win-ctrl-vertical-offset: 8px;
-    --uc-win-ctrl-drag-space: 20px;
-  }
-  :root[tabsintitlebar][lwtheme]:not([customizing=true]) {
-    --uc-win-ctrl-btn-width: 30px;
-    --uc-win-ctrl-padding: 12px;
-    --uc-win-ctrl-vertical-offset: 5px;
-    --uc-win-ctrl-drag-space: 20px;
-  }
-  /* Place window controls inside nav-bar (address bar) for Linux */
 }
 @media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button), (-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-available) and (-moz-gtk-csd-close-button), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button), (-moz-platform: linux) and (-moz-gtk-csd-maximize-button), (-moz-platform: linux) and (-moz-gtk-csd-close-button) {
   #nav-bar {
@@ -112,7 +77,7 @@
 }
 @media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-gtk-csd-available) and (-moz-gtk-csd-close-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-platform: linux) and (-moz-gtk-csd-maximize-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-platform: linux) and (-moz-gtk-csd-close-button) and (not (-moz-gtk-csd-reversed-placement)) {
   #nav-bar {
-    padding-inline: 0 calc(var(--uc-navbar-padding, 0) + var(--uc-win-ctrl-padding) + var(--uc-win-ctrl-drag-space)) !important;
+    padding-right: 100px !important;
   }
   .titlebar-buttonbox-container {
     right: 0;
@@ -120,39 +85,19 @@
 }
 @media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-reversed-placement), (-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-reversed-placement), (-moz-gtk-csd-available) and (-moz-gtk-csd-close-button) and (-moz-gtk-csd-reversed-placement), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-reversed-placement), (-moz-platform: linux) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-reversed-placement), (-moz-platform: linux) and (-moz-gtk-csd-close-button) and (-moz-gtk-csd-reversed-placement) {
   #nav-bar {
-    padding-inline: calc(var(--uc-navbar-padding, 0) + var(--uc-win-ctrl-padding) + var(--uc-win-ctrl-drag-space)) 0 !important;
+    padding-left: 100px !important;
   }
   .titlebar-buttonbox-container {
     left: 0;
   }
 }
 @media (-moz-gtk-csd-available), (-moz-platform: linux) {
-  #navigator-toolbox[style*="margin-top: -"] .titlebar-buttonbox-container,
-  [inDOMFullscreen=true] .titlebar-buttonbox-container {
-    transform: translateY(-100px);
-  }
   #nav-bar .titlebar-buttonbox-container {
     display: flex !important;
     position: absolute !important;
     top: 0;
-    right: 0;
     height: 100%;
     align-items: center;
     z-index: 10;
-  }
-  #nav-bar {
-    padding-right: var(--uc-window-control-width, 100px) !important;
-    position: relative;
-  }
-  :root:not([inFullscreen]) #nav-bar {
-    margin-top: 0 !important;
-    z-index: 2;
-  }
-  :root[inFullscreen] #nav-bar {
-    border-right: none !important;
-  }
-  #navigator-toolbox[style*="margin-top: -"] .titlebar-buttonbox-container,
-  [inDOMFullscreen=true] .titlebar-buttonbox-container {
-    transform: translateY(-100px);
   }
 }/*# sourceMappingURL=userChrome.css.map */

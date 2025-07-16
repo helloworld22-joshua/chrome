@@ -24,6 +24,3 @@ Top bar gradient for Frieren Wallpaper: linear-gradient(180deg, rgba(28,87,145,1
 
 *You can use the backgrounds under /wallpapers*
 *Notice: While you can use gifs as your wallpaper I experienced some bugs such as poor performance*
-
-### User CSS
-Some of the code comes from here: https://github.com/ranmaru22/firefox-vertical-tabs

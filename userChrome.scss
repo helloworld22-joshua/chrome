@@ -13,7 +13,6 @@
 }
 
 // Hide the main tabs toolbar (removes native Firefox tabs UI)
-#TabsToolbar:not([customizing=true]),
 #TabsToolbar {
 	visibility: collapse !important;
 }
@@ -26,33 +25,35 @@
 	min-width: unset !important;
 	max-width: unset !important;
 	transition: width var(--transition-time) ease-in-out !important;
-	will-change: width;
-}
+	will-change: width !important;
+	z-index: 1000 !important;
 
-#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action]:hover {
-	width: var(--expanded-width) !important;
-}
+	&:hover {
+		width: var(--expanded-width) !important;
+	}
 
-#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] ~ #sidebar-splitter {
-	display: none !important;
-}
+	& ~ #sidebar-splitter {
+		display: none !important;
+	}
 
-#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] ~ #tabbrowser-tabbox {
-	margin-left: var(--sidebar-width);
-}
+	& ~ #tabbrowser-tabbox {
+		margin-left: var(--sidebar-width) !important;
+	}
 
-#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] #sidebar-header {
-	visibility: collapse;
+	& #sidebar-header {
+		visibility: collapse;
+	}
 }
 
 /*	==========================
 	MacOS specific styles
 	=========================== */
 @media (-moz-platform: macos) {
-	:root:not([customizing=true]) #nav-bar:not([inFullscreen]) {
+	:root #nav-bar:not([inFullscreen]) {
 		padding-left: 80px !important;
 	}
-	:root:not([customizing=true]) #TabsToolbar .titlebar-buttonbox-container {
+
+	:root #TabsToolbar .titlebar-buttonbox-container {
 		position: absolute;
 		display: block;
 		visibility: visible !important;
@@ -60,6 +61,7 @@
 		left: 0px;
 	}
 }
+
 /*	==========================
 	Linux/GTK specific styles
 	=========================== */
@@ -68,21 +70,25 @@
 		overflow: hidden !important;
 	}
 }
+
 @media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button), (-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-available) and (-moz-gtk-csd-close-button), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button), (-moz-platform: linux) and (-moz-gtk-csd-maximize-button), (-moz-platform: linux) and (-moz-gtk-csd-close-button) {
 	#nav-bar {
 		--uc-navbar-padding: calc(var(--uc-win-ctrl-btn-width) * 1);
 	}
 }
+
 @media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button), (-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button), (-moz-platform: linux) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
 	#nav-bar {
 		--uc-navbar-padding: calc(var(--uc-win-ctrl-btn-width) * 2);
 	}
 }
+
 @media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
 	#nav-bar {
 		--uc-navbar-padding: calc(var(--uc-win-ctrl-btn-width) * 3);
 	}
 }
+
 @media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-gtk-csd-available) and (-moz-gtk-csd-close-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-platform: linux) and (-moz-gtk-csd-maximize-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-platform: linux) and (-moz-gtk-csd-close-button) and (not (-moz-gtk-csd-reversed-placement)) {
 	#nav-bar {
 		padding-right: 100px !important;
@@ -91,6 +97,7 @@
 		right: 0;
 	}
 }
+
 @media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-reversed-placement), (-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-reversed-placement), (-moz-gtk-csd-available) and (-moz-gtk-csd-close-button) and (-moz-gtk-csd-reversed-placement), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-reversed-placement), (-moz-platform: linux) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-reversed-placement), (-moz-platform: linux) and (-moz-gtk-csd-close-button) and (-moz-gtk-csd-reversed-placement) {
 	#nav-bar {
 		padding-left: 100px !important;
@@ -99,6 +106,7 @@
 		left: 0;
 	}
 }
+
 @media (-moz-gtk-csd-available), (-moz-platform: linux) {
 	#nav-bar .titlebar-buttonbox-container {
 		display: flex !important;

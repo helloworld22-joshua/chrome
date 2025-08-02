@@ -11,7 +11,6 @@
   background-image: none !important;
 }
 
-#TabsToolbar:not([customizing=true]),
 #TabsToolbar {
   visibility: collapse !important;
 }
@@ -23,21 +22,18 @@
   min-width: unset !important;
   max-width: unset !important;
   transition: width var(--transition-time) ease-in-out !important;
-  will-change: width;
+  will-change: width !important;
+  z-index: 1000 !important;
 }
-
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action]:hover {
   width: var(--expanded-width) !important;
 }
-
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] ~ #sidebar-splitter {
   display: none !important;
 }
-
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] ~ #tabbrowser-tabbox {
-  margin-left: var(--sidebar-width);
+  margin-left: var(--sidebar-width) !important;
 }
-
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] #sidebar-header {
   visibility: collapse;
 }
@@ -46,10 +42,10 @@
 	MacOS specific styles
 	=========================== */
 @media (-moz-platform: macos) {
-  :root:not([customizing=true]) #nav-bar:not([inFullscreen]) {
+  :root #nav-bar:not([inFullscreen]) {
     padding-left: 80px !important;
   }
-  :root:not([customizing=true]) #TabsToolbar .titlebar-buttonbox-container {
+  :root #TabsToolbar .titlebar-buttonbox-container {
     position: absolute;
     display: block;
     visibility: visible !important;

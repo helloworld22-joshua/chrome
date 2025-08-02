@@ -17,6 +17,8 @@
 	visibility: collapse !important;
 }
 
+// TODO: Not working when sidebar is on the right side
+
 // Sidebar base styling for Sidebery or similar extensions
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] {
 	position: absolute;	// Replace with relative to move tab content
@@ -43,6 +45,11 @@
 	& #sidebar-header {
 		visibility: collapse;
 	}
+}
+
+// Adds a margin to the side except when in DOM Fullscreen
+:root:not([inDOMFullscreen=true]) #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] ~ #tabbrowser-tabbox {
+	margin-left: var(--sidebar-width) !important;
 }
 
 /*	==========================

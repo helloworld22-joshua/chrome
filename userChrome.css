@@ -38,6 +38,10 @@
   visibility: collapse;
 }
 
+:root:not([inDOMFullscreen=true]) #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] ~ #tabbrowser-tabbox {
+  margin-left: var(--sidebar-width) !important;
+}
+
 /*	==========================
 	MacOS specific styles
 	=========================== */

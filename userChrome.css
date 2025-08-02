@@ -6,40 +6,45 @@
   --sidebar-width: 42px;
 }
 
-/* Remove green dot (attention badge) from extension buttons */
 #unified-extensions-button[attention] > .toolbarbutton-icon,
 .unified-extensions-item[attention] > .unified-extensions-item-action-button.toolbarbutton-1 > .toolbarbutton-badge-stack {
   background-image: none !important;
 }
 
-/* Hide the main tabs toolbar (removes native Firefox tabs UI) */
 #TabsToolbar:not([customizing=true]),
 #TabsToolbar {
   visibility: collapse !important;
 }
 
-/* Sidebar base styling for Sidebery or similar extensions */
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] {
-  position: relative;
+  position: absolute;
   width: var(--sidebar-width) !important;
+  height: 100vh;
   min-width: unset !important;
   max-width: unset !important;
   transition: width var(--transition-time) ease-in-out !important;
   will-change: width;
 }
+
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action]:hover {
   width: var(--expanded-width) !important;
 }
-#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] + #sidebar-splitter {
+
+#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] ~ #sidebar-splitter {
   display: none !important;
 }
+
+#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] ~ #tabbrowser-tabbox {
+  margin-left: var(--sidebar-width);
+}
+
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] #sidebar-header {
   visibility: collapse;
 }
 
-/* ===========================
-   MacOS specific styles
-   =========================== */
+/*	==========================
+	MacOS specific styles
+	=========================== */
 @media (-moz-platform: macos) {
   :root:not([customizing=true]) #nav-bar:not([inFullscreen]) {
     padding-left: 80px !important;
@@ -52,9 +57,9 @@
     left: 0px;
   }
 }
-/* ===========================
-   Linux/GTK specific styles
-   =========================== */
+/*	==========================
+	Linux/GTK specific styles
+	=========================== */
 @media (-moz-gtk-csd-available), (-moz-platform: linux) {
   #navigator-toolbox {
     overflow: hidden !important;
@@ -100,4 +105,4 @@
     align-items: center;
     z-index: 10;
   }
-}/*# sourceMappingURL=userChrome.css.map */
+} /*# sourceMappingURL=userChrome.css.map */

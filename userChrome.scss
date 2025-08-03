@@ -38,10 +38,6 @@
 		display: none !important;
 	}
 
-	& ~ #tabbrowser-tabbox {
-		margin-left: var(--sidebar-width) !important;
-	}
-
 	& #sidebar-header {
 		visibility: collapse;
 	}

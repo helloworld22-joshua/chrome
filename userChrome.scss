@@ -94,7 +94,7 @@
 
 @media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-gtk-csd-available) and (-moz-gtk-csd-close-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-platform: linux) and (-moz-gtk-csd-maximize-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-platform: linux) and (-moz-gtk-csd-close-button) and (not (-moz-gtk-csd-reversed-placement)) {
 	#nav-bar {
-		padding-right: 100px !important;
+		padding-right: 120px !important;
 	}
 	.titlebar-buttonbox-container {
 		right: 0;
@@ -103,7 +103,7 @@
 
 @media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-reversed-placement), (-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-reversed-placement), (-moz-gtk-csd-available) and (-moz-gtk-csd-close-button) and (-moz-gtk-csd-reversed-placement), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-reversed-placement), (-moz-platform: linux) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-reversed-placement), (-moz-platform: linux) and (-moz-gtk-csd-close-button) and (-moz-gtk-csd-reversed-placement) {
 	#nav-bar {
-		padding-left: 100px !important;
+		padding-left: 120px !important;
 	}
 	.titlebar-buttonbox-container {
 		left: 0;

@@ -53,6 +53,11 @@
 	border-bottom: 1px solid var(--ctx-menu-separator);
 }
 
+.NavigationBar .nav-item {
+	width: var(--tabs-height);
+	height: var(--tabs-height);
+}
+
 .NavigationBar[data-layout="wrap"] .main-items {
 	display: flex;
 	justify-content: center;

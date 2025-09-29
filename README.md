@@ -1,7 +1,8 @@
 # Chrome for Firefox
 
 ### Extensions
-This uses Sideberry
+This uses Sideberry.
+
 Firefox Color or Adaptive Tab Bar Colour are recommended but not needed
 
 ### This is needed for the custom CSS to work
@@ -23,4 +24,5 @@ Side bar gradient for Frieren Wallpaper: linear-gradient(90deg, rgba(28,87,145,1
 Top bar gradient for Frieren Wallpaper: linear-gradient(180deg, rgba(28,87,145,1) 0%, rgba(75,123,171,1) 40%, rgba(233,229,228,1) 60%, rgba(128,160,198,1) 80%, rgba(244,114,122,1) 90%, rgba(44,70,93,1) 98%);
 
 *You can use the backgrounds under /wallpapers*
+
 *Notice: While you can use gifs as your wallpaper I experienced some bugs such as poor performance*

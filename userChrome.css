@@ -25,7 +25,7 @@
   will-change: width !important;
   z-index: 1000 !important;
 }
-#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action]:hover {
+#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action]:is(:hover, :focus) {
   width: var(--expanded-width) !important;
 }
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] ~ #sidebar-splitter {

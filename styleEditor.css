@@ -75,6 +75,10 @@
 	transition: opacity 0.5s linear;
 }
 
+.PinnedTabsBar {
+	flex-wrap: nowrap !important;
+}
+
 #root:not(:hover) .NavigationBar[data-layout="inline"] .static-btns {
 	opacity: 0;
 	z-index: -1;

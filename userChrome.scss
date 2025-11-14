@@ -30,7 +30,7 @@
 	will-change: width !important;
 	z-index: 1000 !important;
 
-	&:hover {
+	&:is(:hover, :focus) {
 		width: var(--expanded-width) !important;
 	}
 

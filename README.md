@@ -31,3 +31,4 @@ Top bar gradient for Frieren Wallpaper: linear-gradient(180deg, rgba(28,87,145,1
 - Fix/simplify userContent.scss
 - Enforce formating
 - Replace hardcoded values with variables
+- Upload Sidebery config

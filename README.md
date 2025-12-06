@@ -1,14 +1,14 @@
 # Chrome for Firefox
 
-### Extensions
+## Extensions
 This uses Sideberry.
 
 Firefox Color or Adaptive Tab Bar Colour are recommended but not needed
 
-### This is needed for the custom CSS to work
+## This is needed for the custom CSS to work
 Enter "about:config" into the search bar and set "toolkit.legacyUserProfileCustomizations.stylesheets" to true.
 
-### For Firefox Color
+## For Firefox Color
 One of my FF themes (purple): https://color.firefox.com/?theme=XQAAAAJ-AgAAAAAAAABBqYhm849SCicxcUEYWXcGHf3p79Ffm06OXtakGWB8WYVdiUdfldDIGArGklQf50jaX9NN8B5fVQPonJyoTUv1cfmNTZm7nJoHBdhc2DAVqFWZ7cq-3zJ9OCzGKhirAc0jBSiIotmeHfQ0kzpiiW7Imn2R8tRQLXS6Xjd-XF9engtfYf3OPbnaLFrukRj5cwa-xiU38e91p_c8rlFvwxqxXL4-gj4FDDvwPi-l011PpxOhpy-EgA0jVExD3O_jWn_uM-WeoKXLRA_wJhFNj_sxx7frwufx6EXMIxsTEeWFTy89Cl9sgCg1m7sqcIM__T4xZmsDv9qoO-0-MJYCzegjGwKVYB4zhg7EYVj-TXzXZV39iPa9
 
 Another theme in blue: https://color.firefox.com/?theme=XQAAAAJ-AgAAAAAAAABBqYhm849SCicxcUEYWXcGHf3p79Ffm06OXtakGWB8WYVdiUdfldDIGArGklQf50jaX9NN8B5fVQPonIoWmTvxce-kvXqmjXMs06DOaiR4r-hKxtXhVYercgbUo5Aynq1Xra87EacH6Zb9t69ojNAHBIdkxD0O2Gfa15CTiCAfwG2b1YGkMErUBXecRx_7r2j4pJiqVBsXZ_wZutRoK053fWWIxuIWDHeqpLmplc23OobSz55Nep5NiNAw83tn_Vp295fHtfY96yuU3a4525F-X_Z1Xij_XTwmt36ZPKl1NE52yjw5EpnbFpcM2lyXs_yD5kF-LcRE7yhgT7OBy0YsdGv2HjmbfDnqV_-mId5v
@@ -23,6 +23,11 @@ Side bar gradient for Frieren Wallpaper: linear-gradient(90deg, rgba(28,87,145,1
 
 Top bar gradient for Frieren Wallpaper: linear-gradient(180deg, rgba(28,87,145,1) 0%, rgba(75,123,171,1) 40%, rgba(233,229,228,1) 60%, rgba(128,160,198,1) 80%, rgba(244,114,122,1) 90%, rgba(44,70,93,1) 98%);
 
-*You can use the backgrounds under /wallpapers*
+## Notes
+- Dropped support for gif wallpapers due to poor performance and crashes
 
-*Notice: While you can use gifs as your wallpaper I experienced some bugs such as poor performance*
+## TODO
+- Simplify styleEditor.css
+- Fix/simplify userContent.scss
+- Enforce formating
+- Replace hardcoded values with variables

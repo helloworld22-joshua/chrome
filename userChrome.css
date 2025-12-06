@@ -34,6 +34,18 @@
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] #sidebar-header {
   visibility: collapse;
 }
+#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action]::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 0;
+  right: -15px;
+  z-index: 100;
+  background-color: var(--lwt-accent-color);
+  -webkit-clip-path: path("M 0,0 L 15,0 A 15 15 0 0 0 0,15 Z");
+          clip-path: path("M 0,0 L 15,0 A 15 15 0 0 0 0,15 Z");
+}
 
 :root:not([inDOMFullscreen=true]) #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] ~ #tabbrowser-tabbox {
   margin-left: var(--sidebar-width) !important;

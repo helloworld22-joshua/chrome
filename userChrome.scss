@@ -41,6 +41,18 @@
 	& #sidebar-header {
 		visibility: collapse;
 	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 15px;
+		height: 15px;
+		top: 0;
+		right: -15px;
+		z-index: 100;
+		background-color: var(--lwt-accent-color);
+		clip-path: path('M 0,0 L 15,0 A 15 15 0 0 0 0,15 Z');
+	}
 }
 
 // Adds a margin to the side except when in DOM Fullscreen

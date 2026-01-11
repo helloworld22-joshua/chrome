@@ -26,4 +26,4 @@ Desktop.ini
 *.log
 
 # SCSS
-.css.map
+*.css.map

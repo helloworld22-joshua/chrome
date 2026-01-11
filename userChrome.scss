@@ -32,14 +32,34 @@
 
 	&:is(:hover, :focus) {
 		width: var(--expanded-width) !important;
+
+		& #sidebar-header {
+			top: 0;
+			opacity: 1;
+		}
 	}
 
-	& ~ #sidebar-splitter {
+	~ #sidebar-splitter {
 		display: none !important;
 	}
 
-	& #sidebar-header {
-		visibility: collapse;
+	#sidebar-header {
+		position: absolute;
+		top: -48px;
+		left: var(--expanded-width);
+		border: none !important;
+		opacity: 0;
+		transition: top .3s ease-in-out, opacity .15s linear;
+		
+		#sidebar-switcher-target {
+			background-color: var(--toolbox-bgcolor) !important;
+			border-radius: 10px !important;
+			padding: .75rem !important;
+		}
+
+		#sidebar-close {
+			display: none !important;
+		}
 	}
 
 	&::before {

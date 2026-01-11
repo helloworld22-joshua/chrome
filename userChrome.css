@@ -28,11 +28,28 @@
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action]:is(:hover, :focus) {
   width: var(--expanded-width) !important;
 }
+#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action]:is(:hover, :focus) #sidebar-header {
+  top: 0;
+  opacity: 1;
+}
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] ~ #sidebar-splitter {
   display: none !important;
 }
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] #sidebar-header {
-  visibility: collapse;
+  position: absolute;
+  top: -48px;
+  left: var(--expanded-width);
+  border: none !important;
+  opacity: 0;
+  transition: top 0.3s ease-in-out, opacity 0.15s linear;
+}
+#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] #sidebar-header #sidebar-switcher-target {
+  background-color: var(--toolbox-bgcolor) !important;
+  border-radius: 10px !important;
+  padding: 0.75rem !important;
+}
+#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] #sidebar-header #sidebar-close {
+  display: none !important;
 }
 #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action]::before {
   content: "";
